@@ -1,0 +1,199 @@
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 50% !important;
+  }
+}
+
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+@media (max-width: 992px) {
+  .hide-movile {
+    display: none;
+  }
+
+  side-menu-content ion-label{font-size: 1.3em;}
+}
+
+@media (min-width: 992px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #777, /* anterior #CB2434 */
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222
+);
+
+.bg-light{
+  background:rgba(255,255,255,0.75);
+}
+
+.bg-white{
+  background: #fff;
+}
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+.scroll-content{
+    background: url("../assets/imgs/bg-01.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+
+}
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";
+
+.datetime-md{padding: 8px !important;}
+
+ion-input, input { padding-left: 4px; /*background: rgba(200,200,200,0.3);*/}
+.item-md.item-block .item-inner{border-bottom: none !important;}
+
+ion-label{  margin-top: 0px !important;}
+ion-select{    padding-top: 4px;
+    padding-bottom: 4px;}
+.item-inner ion-label{    margin-bottom: 0px;}
+.item {padding-left: 8px !important;
+    padding-right: 8px !important;}
+.text-input{ margin-top: 4px!important; margin-bottom: 4px!important;     margin-bottom: 7px !important;}
+.col {padding: 2px !important;}
+
+ion-input, ion-select, .app-input, ion-datetime{
+  border: 1px solid rgba(0,0,0,.15) !important;
+  border-radius: .25rem !important;
+  margin-bottom: 0.25em !important;
+}
+mat-form-field{padding-bottom: 10px !important;}
+
+item-input, input {
+  border-bottom: none !important;
+}
+
+ion-select, ion-datetime, .datetime-md{
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+
+.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    border-bottom: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+.item-md{border-bottom: 2px solid #fff;}
+
+.item-input.ng-invalid.ng-touched:last-child:not(.input-has-focus):not(.item-input-has-focus) {
+    border-bottom: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+.item-md{padding-right:10px !important;}
+
+ion-item .input-has-focus, .item-label-floating {
+    border-bottom: none !important;
+}
+
+.input-wrapper ion-label, ion-select{
+  padding-left: 0 !important;
+}
+
+.item-input {
+    border-bottom: none !important;
+}
+
+.item-inner{
+  padding-right:0px !important;
+}
+
+.item-input .label-md,
+.item-select .label-md,
+.item-datetime .label-md {
+  color: #000 !important;
+  font-size: 0.9em;
+}
+
+.toolbar-title, th{
+  font-weight: normal !important;
+}
+
+.mat-form-field-infix{  border-top:0px; padding:0;}
+.mat-form-field-wrapper{ padding-bottom:0px; }
+.mat-form-field-underline{ display:none; }
+.mat-form-field { width:100%; }
+.mat-select { padding-bottom: 5px; }
+.app-input{  padding: 8px !important;}

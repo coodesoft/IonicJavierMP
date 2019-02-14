@@ -1,0 +1,7 @@
+{
+  "name": "eBroker",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

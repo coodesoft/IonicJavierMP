@@ -1,0 +1,40 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+    <ion-title>Mi perfil - IonicADMFront</ion-title>
+    <user-info></user-info>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-xs-12 col-sm-8 col-md-6 col-lg-6 col-xl-4>
+        <ion-list>
+          <ion-item-divider color="primary">Actualizar contraseña</ion-item-divider>
+        </ion-list>
+      <form [formGroup]="newPassForm" (ngSubmit)="newPass()">
+      <ion-list>
+        <ion-item>
+          <ion-label stacked>Contraseña actual:</ion-label>
+          <ion-input formControlName="pass" type="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Nueva Contraseña:</ion-label>
+          <ion-input formControlName="npass" type="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Repetir Contraseña:</ion-label>
+          <ion-input formControlName="rpass" type="password"></ion-input>
+        </ion-item>
+      </ion-list>
+      <div padding>
+        <button ion-button block type="submit">Guardar</button>
+      </div>
+    </form>
+  </ion-col>
+  </ion-row>
+  </ion-grid>
+</ion-content>

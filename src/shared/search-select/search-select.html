@@ -1,0 +1,45 @@
+<!-- Generated template for the SearchSelectComponent component -->
+
+<ion-header>
+  <ion-navbar>
+    <ion-row align-items-center>
+      <ion-col col-8>
+          <ion-title>Seleccionar Ocupación</ion-title>
+      </ion-col>
+      <ion-col col-3 col-sm-2>
+        <button ion-button (click)="sendOcupation()">HECHO</button>
+      </ion-col>
+      <ion-col col-1>
+        <ion-icon name="close-circle" (click)="closeSearchPage()"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-col>
+      <ion-searchbar
+        [(ngModel)]="sarchText"
+        (ionInput)="onInput($event)"
+        placeholder="Buscar">
+      </ion-searchbar>
+    </ion-col>
+  </ion-row>
+
+   <ion-row>
+      <ion-col>
+        <ion-list radio-group [(ngModel)]="selectedOcupation">
+          <ion-item *ngFor="let codigo of filteredOcupaciones">
+            <ion-label>{{codigo.Descripcion}}</ion-label>
+            <ion-radio value='{"code": "{{codigo.Codigo}}", "desc": "{{codigo.Descripcion}}" }'></ion-radio>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+   </ion-row>
+
+  <ion-row justify-content-center>
+
+  </ion-row>
+</ion-content>

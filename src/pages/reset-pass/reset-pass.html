@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Resetear contraseña - IonicADMFront</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col offset-sm-2 offset-md-3 offset-lg-4 offset-lg-5 col-12 col-sm-8 col-md-6 col-lg-4 col-xl-2>
+
+        <form [formGroup]="rPassForm" (ngSubmit)="resetPass()">
+          <ion-list>
+            <ion-item>
+              <ion-label stacked>Usuario:</ion-label>
+              <ion-input formControlName="user" type="text" placeholder="Usuario"></ion-input>
+            </ion-item>
+          </ion-list>
+          <div padding>
+            <button ion-button block type="submit" >Resetear</button>
+          </div>
+        </form>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,5 @@
+{
+  "urlAuthLogin":"http://34.216.72.1/PHPAuth/API/session/login",
+  "urlAuthReset":"http://34.216.72.1/PHPAuth/API/session/new-reset-pass-token",
+  "urlAuthUpdatePass":"http://34.216.72.1/PHPAuth/API/session/update-pass"
+}
