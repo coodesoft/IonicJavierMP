@@ -9,6 +9,8 @@ import { HomePage }                from '../pages/home/home';
 import { LoginPage }               from '../pages/login/login';
 import { ActualizacionPerfilPage } from '../pages/actualizacion-perfil/actualizacion-perfil';
 
+import { NuevoPagoPage } from '../pages/mercado-pago/nuevo-pago/nuevo-pago';
+
 // Side Menu Component
 import { SideMenuContentComponent } from './../shared/side-menu-content/side-menu-content.component';
 import { SideMenuSettings }         from './../shared/side-menu-content/models/side-menu-settings';
@@ -82,6 +84,14 @@ export class MyApp {
       temp = { displayName: 'Personal', subItems: [] };
 
       temp.subItems.push({	iconName: 'person',	displayName: 'Mi perfil',	component: ActualizacionPerfilPage });
+
+      this.options.push(temp);
+    }
+
+    if(this.codeInFuntions('NPago',functions)){
+      temp = { displayName: 'Pagos', subItems: [] };
+
+      temp.subItems.push({	iconName: 'person',	displayName: 'Ingresar pago',	component: NuevoPagoPage });
 
       this.options.push(temp);
     }

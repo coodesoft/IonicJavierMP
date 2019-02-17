@@ -14,6 +14,8 @@ import { PerfilesUsuariosPage }    from '../pages/perfiles-usuarios/perfiles-usu
 import { ResetPassPage }           from '../pages/reset-pass/reset-pass';
 import { ErrorPage }               from '../pages/error/error';
 
+import { NuevoPagoPage } from '../pages/mercado-pago/nuevo-pago/nuevo-pago';
+
 import { StatusBar }    from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -41,6 +43,7 @@ import { MatTableModule }                                 from '@angular/materia
 
 import * as _moment from 'moment';
 import {default as _rollupMoment} from 'moment';
+import { PagoProvider } from '../providers/pago/pago';
 const moment = _rollupMoment || _moment;
 
 export const YYYY_MM_DD_Format = {
@@ -59,6 +62,7 @@ export const YYYY_MM_DD_Format = {
   declarations: [
     MyApp,
     HomePage,
+    NuevoPagoPage,
     LoginPage, ResetPassPage, UserInfoComponent, PerfilesUsuariosPage,
     ActualizacionPerfilPage,
     ErrorPage,
@@ -76,6 +80,7 @@ export const YYYY_MM_DD_Format = {
   entryComponents: [
     MyApp,
     HomePage,
+    NuevoPagoPage,
     LoginPage, UserInfoComponent, ResetPassPage, PerfilesUsuariosPage,
     ActualizacionPerfilPage,
     ErrorPage,
@@ -88,7 +93,8 @@ export const YYYY_MM_DD_Format = {
     { provide: DateAdapter,      useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
     { provide: MAT_DATE_FORMATS, useValue: YYYY_MM_DD_Format },
     AuthProvider,  ConfigProvider,
-    GeneralService, B64toPDFService, FormateoService
+    GeneralService, B64toPDFService, FormateoService,
+    PagoProvider
   ]
 })
 export class AppModule {}
