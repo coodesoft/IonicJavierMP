@@ -4,7 +4,6 @@ import { NuevoPagoPage } from './nuevo-pago';
 
 @NgModule({
   declarations: [
-    NuevoPagoPage,
   ],
   imports: [
     IonicPageModule.forChild(NuevoPagoPage),
