@@ -1,5 +1,7 @@
 {
   "urlAuthLogin":"http://34.216.72.1/PHPAuth/API/session/login",
   "urlAuthReset":"http://34.216.72.1/PHPAuth/API/session/new-reset-pass-token",
-  "urlAuthUpdatePass":"http://34.216.72.1/PHPAuth/API/session/update-pass"
+  "urlAuthUpdatePass":"http://34.216.72.1/PHPAuth/API/session/update-pass",
+
+  "MP_public_key":"APP_USR-3b1fb153-b044-49eb-b6ee-11a37fec5e1b"
 }
