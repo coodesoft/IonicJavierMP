@@ -14,7 +14,8 @@ import { PerfilesUsuariosPage }    from '../pages/perfiles-usuarios/perfiles-usu
 import { ResetPassPage }           from '../pages/reset-pass/reset-pass';
 import { ErrorPage }               from '../pages/error/error';
 
-import { NuevoPagoPage } from '../pages/mercado-pago/nuevo-pago/nuevo-pago';
+import { NuevoPagoPage }      from '../pages/mercado-pago/nuevo-pago/nuevo-pago';
+import { FormularioPagoPage } from '../pages/mercado-pago/formulario-pago/formulario-pago';
 
 import { StatusBar }    from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -30,7 +31,8 @@ import { B64toPDFService } from '../services/64to-pdf.service';
 import { GeneralService }  from '../services/general.service';
 
 //Importación de componentes
-import { UserInfoComponent } from '../components/user-info/user-info';
+import { UserInfoComponent }        from '../components/user-info/user-info';
+import { MercadoPagoFormComponent } from '../components/mercado-pago-form/mercado-pago-form';
 
 import { BrowserAnimationsModule}                         from '@angular/platform-browser/animations';
 import { MatSelectModule }                                from '@angular/material/select';
@@ -62,7 +64,7 @@ export const YYYY_MM_DD_Format = {
   declarations: [
     MyApp,
     HomePage,
-    NuevoPagoPage,
+    NuevoPagoPage, FormularioPagoPage, MercadoPagoFormComponent,
     LoginPage, ResetPassPage, UserInfoComponent, PerfilesUsuariosPage,
     ActualizacionPerfilPage,
     ErrorPage,
@@ -80,7 +82,7 @@ export const YYYY_MM_DD_Format = {
   entryComponents: [
     MyApp,
     HomePage,
-    NuevoPagoPage,
+    NuevoPagoPage, FormularioPagoPage, MercadoPagoFormComponent,
     LoginPage, UserInfoComponent, ResetPassPage, PerfilesUsuariosPage,
     ActualizacionPerfilPage,
     ErrorPage,
