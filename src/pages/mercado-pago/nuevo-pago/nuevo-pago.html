@@ -8,5 +8,15 @@
 
 
 <ion-content padding>
-  <button ion-button block (click)="newPago()">Crear Pago</button>
+  <form action="">
+  <div >
+      <label for="monto"> Monto: </label>
+      <input ion-col type="text" name="monto">
+      <label for="descripcion"> Descripción: </label>
+      <input ion-col type="text" name="descripcion">
+      <label for="email"> Email: </label>
+      <input ion-col type="email" name="email" value="">
+  </div>
+    <button ion-button block (click)="newPago()">Crear Pago</button>
+  </form>
 </ion-content>
