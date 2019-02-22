@@ -1,17 +1,36 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject }    from 'rxjs/Subject';
 
-/*
-  Generated class for the PagoProvider provider.
+import { ConfigProvider }      from '../config/config';
+import { AuthProvider }        from '../auth/auth';
+import { RespuestaAuthModule } from '../../models/respuesta.authmodule';
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class PagoProvider {
 
-  constructor(public http: HttpClient) {
-    console.log('Hello PagoProvider Provider');
-  }
+  constructor(
+    private http:    HttpClient,
+    private configP: ConfigProvider,
+    private auth:    AuthProvider
+  ) {}
 
+  public newPagoOK = new Subject();
+  public newPagoKO = new Subject();
+
+  public newPago(model){
+    let cfgSubscript = this.configP.configLoaded.subscribe({  next: (r) => {
+
+      this.http.post(this.configP.getConfigData().urlNewPago, model, { headers: new HttpHeaders({ 'Authorization': this.auth.userData.token }) }).subscribe(
+        data => {
+          this.newPagoOK.next(<RespuestaAuthModule> data);
+        },
+        err => {
+          this.newPagoKO.next(err);
+        }
+      );
+    } });
+    this.configP.loadConfig();
+    cfgSubscript.unsubscribe();
+  }
 }

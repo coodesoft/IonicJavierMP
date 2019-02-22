@@ -6,8 +6,9 @@ import { HomePage }                            from '../home/home';
 import { Storage }                             from '@ionic/storage';
 import { Events } from 'ionic-angular';
 
-import { AuthProvider }   from '../../providers/auth/auth';
+import { AuthProvider }        from '../../providers/auth/auth';
 import { RespuestaAuthModule } from '../../models/respuesta.authmodule';
+import { LoginModel }          from '../../models/login';
 
 import { GeneralService } from '../../services/general.service';
 
@@ -18,8 +19,7 @@ import { GeneralService } from '../../services/general.service';
 })
 export class LoginPage{
 
-  loginForm:FormGroup;
-  resetPassPage = ResetPassPage;
+  login_form:LoginModel = new LoginModel();
 
   constructor(
     public  navCtrl:      NavController,
@@ -29,20 +29,11 @@ export class LoginPage{
     private storage:      Storage,
     public  gral:         GeneralService,
     public events:        Events
-  ) {
-    this.loginForm = this.formBuilder.group({
-      user: ['', Validators.required],
-      pass: ['', Validators.required]
-    });
-
-  }
+  ) {}
 
   loginUser() {
     this.gral.presentLoading(15000);
-    this.authProvider.login({
-      "email":this.loginForm.controls.user.value,
-      "password":this.loginForm.controls.pass.value
-    })
+    this.authProvider.login(this.login_form)
       .subscribe(data => {
         let d:any = <RespuestaAuthModule> data;
 

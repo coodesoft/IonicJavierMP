@@ -11,22 +11,22 @@
   <ion-grid>
     <ion-row>
       <ion-col offset-sm-2 offset-md-3 offset-lg-3 offset-xl-4 col-12 col-sm-8 col-md-6 col-lg-6 col-xl-4>
-      <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+      <form>
       <ion-list>
         <ion-item text-center>
           <ion-img col-12 style="height: 75px;" src="assets/imgs/logo.svg" ></ion-img>
         </ion-item>
         <ion-item>
           <ion-icon name="person" item-left></ion-icon>
-          <ion-input formControlName="user" type="text" placeholder="Usuario"></ion-input>
+          <ion-input type="text" placeholder="Usuario" [ngModelOptions]="{standalone:true}" [(ngModel)]="login_form.email"></ion-input>
         </ion-item>
         <ion-item>
           <ion-icon name="key" item-left></ion-icon>
-          <ion-input formControlName="pass" type="password" placeholder="Contraseña"></ion-input>
+          <ion-input type="password" placeholder="Contraseña" [ngModelOptions]="{standalone:true}" [(ngModel)]="login_form.password"></ion-input>
         </ion-item>
       </ion-list>
       <div padding>
-        <button ion-button block type="submit">Iniciar sesión</button>
+        <button ion-button block (click)="loginUser()">Iniciar sesión</button>
         <button ion-button block [navPush]="resetPassPage">Resetear contraseña</button>
       </div>
     </form>
