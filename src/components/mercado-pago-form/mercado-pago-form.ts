@@ -22,7 +22,7 @@ export class MercadoPagoFormComponent {
   }
 
   guessingPaymentMethod(event) {
-    var bin = getBin();
+    /*var bin = getBin();
 
     if (event.type == "keyup") {
         if (bin.length >= 6) {
@@ -38,7 +38,7 @@ export class MercadoPagoFormComponent {
                 }, setPaymentMethodInfo);
             }
         }, 100);
-    }
+    }*/
   }
 
   setPaymentMethodInfo(status, response) {

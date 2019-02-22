@@ -13,7 +13,7 @@ import { GeneralService }     from '../../../services/general.service';
 })
 export class NuevoPagoPage {
 
-  private pago_model:Pago = new Pago();
+  public pago_model:Pago = new Pago();
 
   private newPagoOK;
   private newPagoKO;
@@ -35,7 +35,7 @@ export class NuevoPagoPage {
       this.gral.dismissLoading();
     } });
 
-    this.newPagoKO = this.pagoProv.controlKO.subscribe({  next: (r) => {
+    this.newPagoKO = this.pagoProv.newPagoKO.subscribe({  next: (r) => {
       this.gral.errMsg(r);
       this.gral.dismissLoading();
     } });
