@@ -7,7 +7,56 @@
 
 </ion-header>
 
-
 <ion-content padding>
-  <mercado-pago-form></mercado-pago-form>
+  <div>
+    <form action="" method="post" id="pay" name="pay" >
+      <fieldset>
+        <ul>
+            <ion-col col-xs-12 col-sm-3><ion-item>
+                <ion-label stacked>Email:</ion-label>
+                <ion-input type="email" [(ngModel)]="pago_model.email" [ngModelOptions]="{standalone:true}"></ion-input>
+            </ion-item></ion-col>
+
+            <ion-col col-xs-12 col-sm-3><ion-item>
+                <ion-label stacked>Número Tarjeta:</ion-label>
+                <ion-input type="text" #cardNumber (keyup)="guessingPaymentMethod()" (change)="guessingPaymentMethod()"
+                  data-checkout="cardNumber" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false"
+                  onDrag="return false" onDrop="return false" autocomplete=off></ion-input>
+            </ion-item></ion-col>
+
+            <ion-col col-xs-12 col-sm-3><ion-item>
+                <ion-label stacked>Código de seguridad:</ion-label>
+                <ion-input type="text" #securityCode data-checkout="securityCode" placeholder="123" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off></ion-input>
+            </ion-item></ion-col>
+
+            <ion-col col-xs-12 col-sm-3><ion-item>
+                <ion-label stacked>Mes expiración:</ion-label>
+                <ion-input type="text" #cardExpirationMonth data-checkout="cardExpirationMonth" placeholder="12" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off></ion-input>
+            </ion-item></ion-col>
+
+            <ion-col col-xs-12 col-sm-3><ion-item>
+                <ion-label stacked>Año expiración:</ion-label>
+                <ion-input type="text" #cardExpirationYear data-checkout="cardExpirationYear" placeholder="2015" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off></ion-input>
+            </ion-item></ion-col>
+
+            <ion-col col-xs-12 col-sm-3><ion-item>
+                <ion-label stacked>Nombre:</ion-label>
+                <ion-input type="text" #cardholderName data-checkout="cardholderName" placeholder="APRO"></ion-input>
+            </ion-item></ion-col>
+
+
+                <ion-label stacked>Tipo de Documento:</ion-label>
+                <select type="text" #docType data-checkout="docType"></select>
+
+            <ion-col col-xs-12 col-sm-3><ion-item>
+                <ion-label stacked>Número de Documento:</ion-label>
+                <ion-input type="text" #docNumber data-checkout="docNumber" placeholder="12345678"></ion-input>
+            </ion-item></ion-col>
+          </ul>
+          <input type="hidden" name="paymentMethodId" />
+          <button ion-button block (click)="doPay()">Pagar</button>
+      </fieldset>
+    </form>
+  </div>
+
 </ion-content>

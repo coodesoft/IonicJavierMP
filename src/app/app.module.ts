@@ -32,7 +32,6 @@ import { GeneralService }  from '../services/general.service';
 
 //Importación de componentes
 import { UserInfoComponent }        from '../components/user-info/user-info';
-import { MercadoPagoFormComponent } from '../components/mercado-pago-form/mercado-pago-form';
 
 import { BrowserAnimationsModule}                         from '@angular/platform-browser/animations';
 import { MatSelectModule }                                from '@angular/material/select';
@@ -64,7 +63,7 @@ export const YYYY_MM_DD_Format = {
   declarations: [
     MyApp,
     HomePage,
-    NuevoPagoPage, FormularioPagoPage, MercadoPagoFormComponent,
+    NuevoPagoPage, FormularioPagoPage,
     LoginPage, ResetPassPage, UserInfoComponent, PerfilesUsuariosPage,
     ActualizacionPerfilPage,
     ErrorPage,
@@ -82,7 +81,7 @@ export const YYYY_MM_DD_Format = {
   entryComponents: [
     MyApp,
     HomePage,
-    NuevoPagoPage, FormularioPagoPage, MercadoPagoFormComponent,
+    NuevoPagoPage, FormularioPagoPage,
     LoginPage, UserInfoComponent, ResetPassPage, PerfilesUsuariosPage,
     ActualizacionPerfilPage,
     ErrorPage,
