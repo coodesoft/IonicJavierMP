@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { ConfigProvider } from '../../providers/config/config';
 
+declare var Mercadopago:any;
+
 @Component({
   selector: 'mercado-pago-form',
   templateUrl: 'mercado-pago-form.html'
