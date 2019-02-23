@@ -45,6 +45,8 @@ import { MatTableModule }                                 from '@angular/materia
 import * as _moment from 'moment';
 import {default as _rollupMoment} from 'moment';
 import { PagoProvider } from '../providers/pago/pago';
+import { UserProvider } from '../providers/user/user';
+
 const moment = _rollupMoment || _moment;
 
 export const YYYY_MM_DD_Format = {
@@ -95,7 +97,8 @@ export const YYYY_MM_DD_Format = {
     { provide: MAT_DATE_FORMATS, useValue: YYYY_MM_DD_Format },
     AuthProvider,  ConfigProvider,
     GeneralService, B64toPDFService, FormateoService,
-    PagoProvider
+    PagoProvider,
+    UserProvider
   ]
 })
 export class AppModule {}

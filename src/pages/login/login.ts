@@ -21,6 +21,9 @@ export class LoginPage{
 
   login_form:LoginModel = new LoginModel();
 
+  private loginOK;
+  private loginKO;
+
   constructor(
     public  navCtrl:      NavController,
     public  navParams:    NavParams,
@@ -32,26 +35,38 @@ export class LoginPage{
   ) {}
 
   loginUser() {
-    this.gral.presentLoading(15000);
-    this.authProvider.login(this.login_form)
-      .subscribe(data => {
-        let d:any = <RespuestaAuthModule> data;
-
-        if (d['result']['success']){
-          this.storage.set('LOGIN',d['result']);
-          this.authProvider.userData = d['result'];
-          this.events.publish('user:logedIn', d['result']);
-          this.navCtrl.setRoot(HomePage);
-        }
-
-        if (d['error'] !== ''){
-          this.gral.newMensaje('Usuario o contraseña inválida');
-        }
-      }, err => {
-        this.gral.newMensaje('Ocurrió un error al intentar realizar la consulta');
-      });
+    this.gral.presentLoading();
+    this.authProvider.login(this.login_form);
   }
 
-  ionViewDidLoad() {}
+  ionViewDidEnter(){
+    this.loginOK = this.authProvider.loginOK.subscribe({  next: (r) => {
+      let d:any = <RespuestaAuthModule> r;
+
+      if (d['result']['success']){
+        this.storage.set('LOGIN',d['result']);
+        this.authProvider.userData = d['result'];
+        this.events.publish('user:logedIn', d['result']);
+        this.navCtrl.setRoot(HomePage);
+      }
+
+      if (d['error'] !== ''){
+        this.gral.newMensaje('Usuario o contraseña inválida');
+      }
+      this.gral.dismissLoading();
+    } });
+
+    this.loginKO = this.authProvider.loginKO.subscribe({  next: (r) => {
+      this.gral.errMsg(r);
+      this.gral.dismissLoading();
+    } });
+  }
+
+  ionViewDidLeave(){
+    this.loginOK.unsubscribe();
+    this.loginKO.unsubscribe();
+  }
+
+  ionViewDidLoad() { }
 
 }

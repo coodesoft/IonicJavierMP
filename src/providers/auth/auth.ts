@@ -6,14 +6,16 @@ import { Subject } from 'rxjs/Subject';
 import { ConfigProvider } from '../config/config';
 
 @Injectable()
-export class AuthProvider { //[Modificar] este modulo tendría que centralizar la lógica por sobre la página Login
+export class AuthProvider {
 
-  urlLogin:string;
-  urlReset:string;
+  urlReset:string;  // [MODIFICAR] Usar subjects para esto
   urlUpdatePass:string;
 
   config:any;
   userData:any;
+
+  public loginOK = new Subject();
+  public loginKO = new Subject();
 
   constructor(
     private http :   HttpClient,
@@ -22,14 +24,15 @@ export class AuthProvider { //[Modificar] este modulo tendría que centralizar l
   ) {
     storage.get('CONFIG').then((val) => {
       this.config        = val;
-      this.urlLogin      = this.config["urlAuthLogin"];
       this.urlReset      = this.config["urlAuthReset"];
       this.urlUpdatePass = this.config["urlAuthUpdatePass"];
     });
   }
 
-  public login(dataLogin){
-    return this.http.post(this.urlLogin, dataLogin);
+  public login(model){
+    this.http.post(this.configP.getConfigData().urlAuthLogin, model ).subscribe(
+      data => { this.loginOK.next(data); }, err  => { this.createKO.next(err);  }
+    );
   }
 
   public resetPass(user){

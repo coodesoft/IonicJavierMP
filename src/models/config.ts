@@ -3,6 +3,10 @@ export class Config {
   public urlAuthReset:string      = '';
   public urlAuthUpdatePass:string = '';
 
+  public urlNewUser:string    = '';
+  public urlEditUser:string   = '';
+  public urlDeleteUser:string = '';
+
   public urlNewPago:string = '';
 
   public MP_public_key:string     = '';

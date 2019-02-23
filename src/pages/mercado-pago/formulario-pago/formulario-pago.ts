@@ -36,7 +36,7 @@ export class FormularioPagoPage {
     }
   }
 //4509 9535 6623 3704
-  getBin() { return this.cardNumber._value.replace(/[ .-]/g, '').slice(0, 6); }
+  getBin() { return this.cardNumber['_value'].replace(/[ .-]/g, '').slice(0, 6); }
 
   doPay(){
       this.form = document.querySelector('#pay');

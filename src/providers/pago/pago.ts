@@ -19,18 +19,9 @@ export class PagoProvider {
   public newPagoKO = new Subject();
 
   public newPago(model){
-    let cfgSubscript = this.configP.configLoaded.subscribe({  next: (r) => {
-
-      this.http.post(this.configP.getConfigData().urlNewPago, model, { headers: new HttpHeaders({ 'Authorization': this.auth.userData.token }) }).subscribe(
-        data => {
-          this.newPagoOK.next(<RespuestaAuthModule> data);
-        },
-        err => {
-          this.newPagoKO.next(err);
-        }
+    this.http.post(this.configP.getConfigData().urlNewPago, model, { headers: new HttpHeaders({ 'Authorization': this.auth.userData.token }) }).subscribe(
+        data => { this.newPagoOK.next(<RespuestaAuthModule> data); }, err => { this.newPagoKO.next(err); }
       );
-    } });
-    this.configP.loadConfig();
-    cfgSubscript.unsubscribe();
   }
+  
 }

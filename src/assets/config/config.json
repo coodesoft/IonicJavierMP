@@ -3,6 +3,10 @@
   "urlAuthReset":"http://34.216.72.1/PHPAuth/API/session/new-reset-pass-token",
   "urlAuthUpdatePass":"http://34.216.72.1/PHPAuth/API/session/update-pass",
 
+  "urlNewUser":"http://34.216.72.1/PHPAuth/API/user/create",
+  "urlEditUser":"http://34.216.72.1/PHPAuth/API/user/edit",
+  "urlDeleteUser":"http://34.216.72.1/PHPAuth/API/user/delete",
+
   "urlNewPago":"http://34.216.72.1/PHPAuth/API/pago/nuevo",
 
   "MP_public_key":"TEST-fba76d81-be88-4449-b5b6-0c9aec79e38d"
