@@ -31,7 +31,7 @@ export class AuthProvider {
 
   public login(model){
     this.http.post(this.configP.getConfigData().urlAuthLogin, model ).subscribe(
-      data => { this.loginOK.next(data); }, err  => { this.createKO.next(err);  }
+      data => { this.loginOK.next(data); }, err  => { this.loginKO.next(err);  }
     );
   }
 

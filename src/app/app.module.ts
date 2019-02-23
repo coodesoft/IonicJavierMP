@@ -16,6 +16,7 @@ import { ErrorPage }               from '../pages/error/error';
 
 import { NuevoPagoPage }      from '../pages/mercado-pago/nuevo-pago/nuevo-pago';
 import { FormularioPagoPage } from '../pages/mercado-pago/formulario-pago/formulario-pago';
+import { UserAdmPage }        from '../pages/user/user-adm/user-adm';
 
 import { StatusBar }    from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -31,7 +32,8 @@ import { B64toPDFService } from '../services/64to-pdf.service';
 import { GeneralService }  from '../services/general.service';
 
 //Importación de componentes
-import { UserInfoComponent }        from '../components/user-info/user-info';
+import { UserInfoComponent }      from '../components/user-info/user-info';
+import { ModalUserFormComponent } from '../components/modal-user-form/modal-user-form';
 
 import { BrowserAnimationsModule}                         from '@angular/platform-browser/animations';
 import { MatSelectModule }                                from '@angular/material/select';
@@ -66,6 +68,7 @@ export const YYYY_MM_DD_Format = {
     MyApp,
     HomePage,
     NuevoPagoPage, FormularioPagoPage,
+    ModalUserFormComponent, UserAdmPage,
     LoginPage, ResetPassPage, UserInfoComponent, PerfilesUsuariosPage,
     ActualizacionPerfilPage,
     ErrorPage,
@@ -84,6 +87,7 @@ export const YYYY_MM_DD_Format = {
     MyApp,
     HomePage,
     NuevoPagoPage, FormularioPagoPage,
+    ModalUserFormComponent, UserAdmPage,
     LoginPage, UserInfoComponent, ResetPassPage, PerfilesUsuariosPage,
     ActualizacionPerfilPage,
     ErrorPage,

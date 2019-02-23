@@ -10,6 +10,7 @@ import { LoginPage }               from '../pages/login/login';
 import { ActualizacionPerfilPage } from '../pages/actualizacion-perfil/actualizacion-perfil';
 
 import { NuevoPagoPage } from '../pages/mercado-pago/nuevo-pago/nuevo-pago';
+import { UserAdmPage }   from '../pages/user/user-adm/user-adm';
 
 // Side Menu Component
 import { SideMenuContentComponent } from './../shared/side-menu-content/side-menu-content.component';
@@ -92,6 +93,14 @@ export class MyApp {
       temp = { displayName: 'Pagos', subItems: [] };
 
       temp.subItems.push({	iconName: 'person',	displayName: 'Ingresar pago',	component: NuevoPagoPage });
+
+      this.options.push(temp);
+    }
+
+    if(this.codeInFuntions('EUser',functions) || this.codeInFuntions('DUser',functions) || this.codeInFuntions('NUser',functions)){
+      temp = { displayName: 'Usuarios', subItems: [] };
+
+      temp.subItems.push({	iconName: 'person',	displayName: 'Administrar',	component: UserAdmPage });
 
       this.options.push(temp);
     }
