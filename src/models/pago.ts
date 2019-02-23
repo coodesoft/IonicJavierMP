@@ -4,4 +4,9 @@ export class Pago{
   public email:string       = '';
 
   public paymentMethodId:string = '';
+  public errors                 = '';
+
+  public isValid(){
+      return true;
+  }
 }

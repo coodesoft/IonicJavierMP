@@ -16,6 +16,7 @@ import { ErrorPage }               from '../pages/error/error';
 
 import { NuevoPagoPage }      from '../pages/mercado-pago/nuevo-pago/nuevo-pago';
 import { FormularioPagoPage } from '../pages/mercado-pago/formulario-pago/formulario-pago';
+import { ResultPagoPage }     from '../pages/mercado-pago/result-pago/result-pago';
 import { UserAdmPage }        from '../pages/user/user-adm/user-adm';
 
 import { StatusBar }    from '@ionic-native/status-bar';
@@ -67,7 +68,7 @@ export const YYYY_MM_DD_Format = {
   declarations: [
     MyApp,
     HomePage,
-    NuevoPagoPage, FormularioPagoPage,
+    NuevoPagoPage, FormularioPagoPage, ResultPagoPage,
     ModalUserFormComponent, UserAdmPage,
     LoginPage, ResetPassPage, UserInfoComponent, PerfilesUsuariosPage,
     ActualizacionPerfilPage,
@@ -86,7 +87,7 @@ export const YYYY_MM_DD_Format = {
   entryComponents: [
     MyApp,
     HomePage,
-    NuevoPagoPage, FormularioPagoPage,
+    NuevoPagoPage, FormularioPagoPage, ResultPagoPage,
     ModalUserFormComponent, UserAdmPage,
     LoginPage, UserInfoComponent, ResetPassPage, PerfilesUsuariosPage,
     ActualizacionPerfilPage,

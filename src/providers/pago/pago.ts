@@ -23,5 +23,14 @@ export class PagoProvider {
         data => { this.newPagoOK.next(<RespuestaAuthModule> data); }, err => { this.newPagoKO.next(err); }
       );
   }
-  
+
+  public processPagoOK = new Subject();
+  public processPagoKO = new Subject();
+
+  public processPago(model){
+    this.http.post(this.configP.getConfigData().urlProcessPago, model, { headers: new HttpHeaders({ 'Authorization': this.auth.userData.token }) }).subscribe(
+        data => { this.processPagoOK.next(<RespuestaAuthModule> data); }, err => { this.processPagoKO.next(err); }
+      );
+  }
+
 }

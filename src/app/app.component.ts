@@ -9,7 +9,7 @@ import { HomePage }                from '../pages/home/home';
 import { LoginPage }               from '../pages/login/login';
 import { ActualizacionPerfilPage } from '../pages/actualizacion-perfil/actualizacion-perfil';
 
-import { NuevoPagoPage } from '../pages/mercado-pago/nuevo-pago/nuevo-pago';
+import { NuevoPagoPage }  from '../pages/mercado-pago/nuevo-pago/nuevo-pago';
 import { UserAdmPage }   from '../pages/user/user-adm/user-adm';
 
 // Side Menu Component

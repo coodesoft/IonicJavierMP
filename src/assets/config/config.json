@@ -8,6 +8,7 @@
   "urlDeleteUser":"http://34.216.72.1/PHPAuth/API/user/delete",
 
   "urlNewPago":"http://34.216.72.1/PHPAuth/API/pago/nuevo",
+  "urlProcessPago":"http://34.216.72.1/PHPAuth/API/pago/procesar",
 
   "MP_public_key":"TEST-fba76d81-be88-4449-b5b6-0c9aec79e38d"
 }

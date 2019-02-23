@@ -8,6 +8,7 @@ export class Config {
   public urlDeleteUser:string = '';
 
   public urlNewPago:string = '';
+  public urlProcessPago:string = '';
 
   public MP_public_key:string     = '';
 

@@ -26,12 +26,20 @@ export class NuevoPagoPage {
   ) { }
 
   newPago(){
-    this.pagoProv.newPago(this.pago_model);
+    if ( this.pago_model.isValid() ){
+      this.gral.presentLoading();
+      this.pagoProv.newPago(this.pago_model);
+    } else {
+
+    }
   }
 
   ionViewDidEnter(){
     this.newPagoOK = this.pagoProv.newPagoOK.subscribe({  next: (r) => {
-      this.navCtrl.push(FormularioPagoPage, { model:this.pago_model });
+      if ( r.result.success ){
+        this.navCtrl.push(FormularioPagoPage, { model:this.pago_model });
+      }
+
       this.gral.dismissLoading();
     } });
 
