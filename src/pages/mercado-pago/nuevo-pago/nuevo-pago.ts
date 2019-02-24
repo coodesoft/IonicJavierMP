@@ -36,11 +36,11 @@ export class NuevoPagoPage {
 
   ionViewDidEnter(){
     this.newPagoOK = this.pagoProv.newPagoOK.subscribe({  next: (r) => {
-      if ( r.result.success ){
-        this.navCtrl.push(FormularioPagoPage, { model:this.pago_model });
-      }
-
       this.gral.dismissLoading();
+      if ( r.result.success ){
+        this.pago_model.id = r.result.id;
+        this.navCtrl.push(FormularioPagoPage, { pago_model:this.pago_model });
+      }
     } });
 
     this.newPagoKO = this.pagoProv.newPagoKO.subscribe({  next: (r) => {

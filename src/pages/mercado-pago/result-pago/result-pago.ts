@@ -12,7 +12,6 @@ export class ResultPagoPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ResultPagoPage');
   }
 
 }
