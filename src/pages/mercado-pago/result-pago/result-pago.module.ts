@@ -3,9 +3,7 @@ import { IonicPageModule } from 'ionic-angular';
 import { ResultPagoPage } from './result-pago';
 
 @NgModule({
-  declarations: [
-    ResultPagoPage,
-  ],
+  declarations: [ ],
   imports: [
     IonicPageModule.forChild(ResultPagoPage),
   ],

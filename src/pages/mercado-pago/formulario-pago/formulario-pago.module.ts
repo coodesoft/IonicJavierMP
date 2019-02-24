@@ -3,9 +3,7 @@ import { IonicPageModule } from 'ionic-angular';
 import { FormularioPagoPage } from './formulario-pago';
 
 @NgModule({
-  declarations: [
-    FormularioPagoPage,
-  ],
+  declarations: [ ],
   imports: [
     IonicPageModule.forChild(FormularioPagoPage),
   ],

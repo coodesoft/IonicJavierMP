@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { Pago }               from '../../../models/pago';
+import { RespuestaAuthModule } from '../../../models/respuesta.authmodule';
 import { FormularioPagoPage } from '../formulario-pago/formulario-pago';
 import { PagoProvider }       from '../../../providers/pago/pago';
 import { GeneralService }     from '../../../services/general.service';
@@ -35,7 +36,7 @@ export class NuevoPagoPage {
   }
 
   ionViewDidEnter(){
-    this.newPagoOK = this.pagoProv.newPagoOK.subscribe({  next: (r) => {
+    this.newPagoOK = this.pagoProv.newPagoOK.subscribe({  next: (r:RespuestaAuthModule) => {
       this.gral.dismissLoading();
       if ( r.result.success ){
         this.pago_model.id = r.result.id;
@@ -43,7 +44,7 @@ export class NuevoPagoPage {
       }
     } });
 
-    this.newPagoKO = this.pagoProv.newPagoKO.subscribe({  next: (r) => {
+    this.newPagoKO = this.pagoProv.newPagoKO.subscribe({  next: (r:RespuestaAuthModule) => {
       this.gral.errMsg(r);
       this.gral.dismissLoading();
     } });

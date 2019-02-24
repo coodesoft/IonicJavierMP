@@ -2,9 +2,10 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { ConfigProvider } from '../../../providers/config/config';
-import { ResultPagoPage } from '../formulario-pago/formulario-pago';
+import { ResultPagoPage } from '../result-pago/result-pago';
 import { PagoProvider   } from '../../../providers/pago/pago';
 import { Pago }           from '../../../models/pago';
+import { RespuestaAuthModule } from '../../../models/respuesta.authmodule';
 import { GeneralService } from '../../../services/general.service';
 declare var Mercadopago:any;
 
@@ -58,12 +59,12 @@ export class FormularioPagoPage {
   }
 
   ionViewDidEnter(){
-    this.processPagoOK = this.pagoProv.newPagoOK.subscribe({  next: (r) => {
+    this.processPagoOK = this.pagoProv.newPagoOK.subscribe({  next: (r:RespuestaAuthModule) => {
       this.gral.dismissLoading();
       if ( r.result.success ){ this.navCtrl.push(ResultPagoPage, { pago_result:r }); }
     } });
 
-    this.processPagoKO = this.pagoProv.processPagoKO.subscribe({  next: (r) => {
+    this.processPagoKO = this.pagoProv.processPagoKO.subscribe({  next: (r:RespuestaAuthModule) => {
       this.gral.errMsg(r);
       this.gral.dismissLoading();
     } });
