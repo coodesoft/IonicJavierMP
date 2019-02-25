@@ -38,8 +38,12 @@ export class FormularioPagoPage {
         Mercadopago.getPaymentMethod({
             "bin": this.bin
         }, (status, response) => {
-          this.pago_model.paymentMethodId = response[0].id;
-        });
+          if (response[0]){
+            this.pago_model.paymentMethodId = response[0].id;
+          } else {
+            this.gral.newMensaje('Revise el número de tarjeta.');
+          }
+      });
     }
   }
 //4509 9535 6623 3704

@@ -8,23 +8,27 @@
 
 
 <ion-content padding>
-  <form action="">
-  <div>
-      <ion-col col-xs-12 col-sm-3><ion-item>
-          <ion-label stacked>Monto:</ion-label>
-          <ion-input type="text" [(ngModel)]="pago_model.monto" [ngModelOptions]="{standalone:true}"></ion-input>
-      </ion-item></ion-col>
+  <ion-grid>
+    <ion-row>
+        <form offset-sm-2 offset-md-3 offset-lg-3 offset-xl-4 col-12 col-sm-8 col-md-6 col-lg-6 col-xl-4>
+            <ion-col col-xs-12 col-sm-3><ion-item>
+                <ion-label stacked>Monto:</ion-label>
+                <ion-input type="text" [(ngModel)]="pago_model.monto" [ngModelOptions]="{standalone:true}"></ion-input>
+            </ion-item></ion-col>
 
-      <ion-col col-xs-12 col-sm-3><ion-item>
-          <ion-label stacked>Descripción:</ion-label>
-          <ion-input type="text" [(ngModel)]="pago_model.descripcion" [ngModelOptions]="{standalone:true}"></ion-input>
-      </ion-item></ion-col>
+            <ion-col col-xs-12 col-sm-3><ion-item>
+                <ion-label stacked>Descripción:</ion-label>
+                <ion-textarea type="text" [(ngModel)]="pago_model.descripcion" [ngModelOptions]="{standalone:true}"></ion-textarea>
+            </ion-item></ion-col>
 
-      <ion-col col-xs-12 col-sm-3><ion-item>
-          <ion-label stacked>E-Mail:</ion-label>
-          <ion-input type="text" [(ngModel)]="pago_model.email" [ngModelOptions]="{standalone:true}"></ion-input>
-      </ion-item></ion-col>
-  </div>
-    <button ion-button block (click)="newPago()">Crear Pago</button>
-  </form>
+            <ion-col col-xs-12 col-sm-3><ion-item>
+                <ion-label stacked>E-Mail:</ion-label>
+                <ion-input type="text" [(ngModel)]="pago_model.email" [ngModelOptions]="{standalone:true}"></ion-input>
+            </ion-item></ion-col>
+
+          <button ion-button block (click)="newPago()">Crear Pago</button>
+        </form>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>

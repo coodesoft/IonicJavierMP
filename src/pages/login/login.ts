@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators }  from '@angular/forms';
-import { ResetPassPage }                       from '../reset-pass/reset-pass';
-import { HomePage }                            from '../home/home';
 import { Storage }                             from '@ionic/storage';
 import { Events } from 'ionic-angular';
 
 import { AuthProvider }        from '../../providers/auth/auth';
 import { RespuestaAuthModule } from '../../models/respuesta.authmodule';
 import { LoginModel }          from '../../models/login';
+
+import { ResetPassPage }                       from '../reset-pass/reset-pass';
+import { HomePage }                            from '../home/home';
 
 import { GeneralService } from '../../services/general.service';
 
@@ -27,7 +27,6 @@ export class LoginPage{
   constructor(
     public  navCtrl:      NavController,
     public  navParams:    NavParams,
-    public  formBuilder:  FormBuilder,
     private authProvider: AuthProvider,
     private storage:      Storage,
     public  gral:         GeneralService,
@@ -37,6 +36,10 @@ export class LoginPage{
   loginUser() {
     this.gral.presentLoading();
     this.authProvider.login(this.login_form);
+  }
+
+  resetPassPage(){
+    this.navCtrl.push(ResetPassPage);
   }
 
   ionViewDidEnter(){

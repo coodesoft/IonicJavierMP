@@ -8,55 +8,60 @@
 </ion-header>
 
 <ion-content padding>
-  <div>
-    <form action="" method="post" id="pay" name="pay" >
-      <fieldset>
-        <ul>
-            <ion-col col-xs-12 col-sm-3><ion-item>
-                <ion-label stacked>Email:</ion-label>
-                <ion-input type="email" [(ngModel)]="pago_model.email" [ngModelOptions]="{standalone:true}"></ion-input>
-            </ion-item></ion-col>
 
-            <ion-col col-xs-12 col-sm-3><ion-item>
-                <ion-label stacked>Número Tarjeta:</ion-label>
-                <ion-input type="text" #cardNumber (keyup)="guessingPaymentMethod()" (change)="guessingPaymentMethod()"
-                  data-checkout="cardNumber" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false"
-                  onDrag="return false" onDrop="return false" autocomplete=off></ion-input>
-            </ion-item></ion-col>
+  <ion-grid>
+    <ion-row>
+        <form id="pay" name="pay" offset-sm-2 offset-md-3 offset-lg-3 offset-xl-4 col-12 col-sm-8 col-md-6 col-lg-6 col-xl-4>
+            <ion-row>
+                <ion-col col-xs-12>
+                    <ion-item><ion-label stacked>Email:</ion-label> <ion-input type="email" [(ngModel)]="pago_model.email" [ngModelOptions]="{standalone:true}"></ion-input> </ion-item>
+                </ion-col>
+            </ion-row>
 
-            <ion-col col-xs-12 col-sm-3><ion-item>
-                <ion-label stacked>Código de seguridad:</ion-label>
-                <ion-input type="text" #securityCode data-checkout="securityCode" placeholder="123" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off></ion-input>
-            </ion-item></ion-col>
+            <ion-row>
+                <ion-col col-12 col-sm-10>
+                    <ion-item><ion-label stacked>Número Tarjeta:</ion-label> <ion-input type="text" #cardNumber (keyup)="guessingPaymentMethod()" (change)="guessingPaymentMethod()" data-checkout="cardNumber" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off></ion-input></ion-item>
+                </ion-col>
+                <ion-col col-12 col-sm-2>
+                  <ion-item><ion-label stacked>Código de seguridad:</ion-label><ion-input type="text" #securityCode data-checkout="securityCode" placeholder="123" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off></ion-input></ion-item>
+                </ion-col>
+            </ion-row>
 
-            <ion-col col-xs-12 col-sm-3><ion-item>
-                <ion-label stacked>Mes expiración:</ion-label>
-                <ion-input type="text" #cardExpirationMonth data-checkout="cardExpirationMonth" placeholder="12" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off></ion-input>
-            </ion-item></ion-col>
+            <ion-row>
+                <ion-col col-xs-6>
+                    <ion-item><ion-label stacked>Mes expiración:</ion-label><ion-input type="text" #cardExpirationMonth data-checkout="cardExpirationMonth" placeholder="12" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off></ion-input></ion-item>
+                </ion-col>
+                <ion-col col-xs-6>
+                    <ion-item><ion-label stacked>Año expiración:</ion-label><ion-input type="text" #cardExpirationYear data-checkout="cardExpirationYear" placeholder="2015" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off></ion-input></ion-item>
+                </ion-col>
+            </ion-row>
 
-            <ion-col col-xs-12 col-sm-3><ion-item>
-                <ion-label stacked>Año expiración:</ion-label>
-                <ion-input type="text" #cardExpirationYear data-checkout="cardExpirationYear" placeholder="2015" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off></ion-input>
-            </ion-item></ion-col>
+            <ion-row>
+                <ion-col col-xs-12>
+                    <ion-item><ion-label stacked>Nombre:</ion-label><ion-input type="text" #cardholderName data-checkout="cardholderName" placeholder="APRO"></ion-input></ion-item>
+                </ion-col>
+            </ion-row>
 
-            <ion-col col-xs-12 col-sm-3><ion-item>
-                <ion-label stacked>Nombre:</ion-label>
-                <ion-input type="text" #cardholderName data-checkout="cardholderName" placeholder="APRO"></ion-input>
-            </ion-item></ion-col>
+            <ion-row>
+                <ion-col col-xs-12>
+                    <ion-label stacked>Tipo de Documento:</ion-label><select type="text" #docType data-checkout="docType"></select>
+                </ion-col>
+            </ion-row>
 
+            <ion-row>
+                <ion-col col-xs-12>
+                    <ion-item><ion-label stacked>Número de Documento:</ion-label><ion-input type="text" #docNumber data-checkout="docNumber" placeholder="12345678"></ion-input></ion-item>
+                </ion-col>
+            </ion-row>
 
-                <ion-label stacked>Tipo de Documento:</ion-label>
-                <select type="text" #docType data-checkout="docType"></select>
+            <ion-row>
+                <ion-col col-xs-12>
+                    <button ion-button block (click)="doPay()">Ingresar Pago</button>
+                </ion-col>
+            </ion-row>
+        </form>
 
-            <ion-col col-xs-12 col-sm-3><ion-item>
-                <ion-label stacked>Número de Documento:</ion-label>
-                <ion-input type="text" #docNumber data-checkout="docNumber" placeholder="12345678"></ion-input>
-            </ion-item></ion-col>
-          </ul>
-          <input type="hidden" name="paymentMethodId" />
-          <button ion-button block (click)="doPay()">Pagar</button>
-      </fieldset>
-    </form>
-  </div>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
