@@ -52,12 +52,13 @@ export class FormularioPagoPage {
   doPay(){
       this.form = document.querySelector('#pay');
       Mercadopago.createToken(this.form, (status, response) => {
+        this.gral.dismissLoading();
         if (status != 200 && status != 201) {
           this.gral.newMensaje('Revise el formulario.');
         }else{
             this.pago_model.token = response.id;
+            Mercadopago.clearSession();
             this.pagoProv.processPago(this.pago_model);
-            this.gral.presentLoading();
         }
       });
   }
