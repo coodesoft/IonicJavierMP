@@ -11,7 +11,29 @@
 
   <ion-grid>
     <ion-row>
-        <form id="pay" name="pay" offset-sm-2 offset-md-3 offset-lg-3 offset-xl-4 col-12 col-sm-8 col-md-6 col-lg-6 col-xl-4>
+        <ion-col col-12 col-sm-4 col-md-6 col-lg-6 col-xl-4 offset-xl-2>
+            <ion-row>
+              <ion-col col-12><ion-item-divider color="primary"> Información general </ion-item-divider></ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col col-xs-12>
+                    <ion-item><ion-label stacked>Monto: </ion-label><ion-input value="{{pago_model.monto}}" readonly disabled></ion-input></ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col col-xs-12>
+                  <ion-item><ion-label stacked>Descripción: </ion-label><ion-textarea value="{{pago_model.descripcion}}" readonly disabled></ion-textarea></ion-item>
+              </ion-col>
+            </ion-row>
+        </ion-col>
+
+        <form id="pay" name="pay" col-12 col-sm-8 col-md-6 col-lg-6 col-xl-4>
+            <ion-row>
+              <ion-col col-12><ion-item-divider color="primary"> Datos del medio de pago </ion-item-divider></ion-col>
+            </ion-row>
+
             <ion-row>
                 <ion-col col-xs-12>
                     <ion-item><ion-label stacked>Email:</ion-label> <ion-input type="email" [(ngModel)]="pago_model.email" [ngModelOptions]="{standalone:true}"></ion-input> </ion-item>
@@ -29,10 +51,10 @@
 
             <ion-row>
                 <ion-col col-xs-6>
-                    <ion-item><ion-label stacked>Mes expiración:</ion-label><ion-input type="text" #cardExpirationMonth data-checkout="cardExpirationMonth" placeholder="12" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off></ion-input></ion-item>
+                    <ion-item><ion-label stacked>Mes vencimiento:</ion-label><ion-input type="text" #cardExpirationMonth data-checkout="cardExpirationMonth" placeholder="12" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off></ion-input></ion-item>
                 </ion-col>
                 <ion-col col-xs-6>
-                    <ion-item><ion-label stacked>Año expiración:</ion-label><ion-input type="text" #cardExpirationYear data-checkout="cardExpirationYear" placeholder="2015" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off></ion-input></ion-item>
+                    <ion-item><ion-label stacked>Año vencimiento:</ion-label><ion-input type="text" #cardExpirationYear data-checkout="cardExpirationYear" placeholder="2025" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off></ion-input></ion-item>
                 </ion-col>
             </ion-row>
 
@@ -44,7 +66,7 @@
 
             <ion-row>
                 <ion-col col-xs-12>
-                    <ion-label stacked>Tipo de Documento:</ion-label><select type="text" #docType data-checkout="docType"></select>
+                    <ion-item><ion-label stacked>Tipo de Documento:</ion-label><select type="text" #docType data-checkout="docType"></select></ion-item>
                 </ion-col>
             </ion-row>
 

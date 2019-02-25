@@ -29,9 +29,10 @@ export class NuevoPagoPage {
   newPago(){
     if ( this.pago_model.isValid() ){
       this.gral.presentLoading();
+      this.pago_model.deleteExtraField();
       this.pagoProv.newPago(this.pago_model);
     } else {
-
+      this.gral.newMensaje(this.pago_model.errors);
     }
   }
 

@@ -10,6 +10,13 @@ export class Pago{
   public errors                 = '';
 
   public isValid(){
+      if ( this.monto <= 0        ){ this.errors = 'El monto ingresado debe ser mayor a cero'; return false; }
+      if ( this.descripcion == '' ){ this.errors = 'Es necesario completar la descripción'; return false;    }
+      if ( this.email == ''       ){ this.errors = 'Es necesario ingresar un E-Mail'; return false;    }
       return true;
+  }
+
+  public deleteExtraField(){
+    delete this.errors;
   }
 }

@@ -28,8 +28,10 @@
   </ion-row>
   <ion-row>
     <ion-col offset-sm-2 offset-md-3 offset-lg-3 offset-xl-4 col-12 col-sm-8 col-md-6 col-lg-6 col-xl-4>
-      <button ion-button block (click)="loginUser()">Iniciar sesión</button>
-      <button ion-button block (click)="resetPassPage()">Resetear contraseña</button>
+      <ion-row>
+        <ion-col col-12 col-sm-6><button ion-button block (click)="resetPassPage()">Recuperar contraseña</button></ion-col>
+        <ion-col col-12 col-sm-6><button ion-button block (click)="loginUser()">Iniciar sesión</button></ion-col>
+      </ion-row>
     </ion-col>
   </ion-row>
 </ion-grid>
