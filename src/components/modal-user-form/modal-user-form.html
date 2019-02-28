@@ -1,4 +1,60 @@
-<!-- Generated template for the ModalUserFormComponent component -->
-<div>
-  {{text}}
+<div class="cont">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>{{text}} usuario</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content padding>
+      <ion-grid>
+          <ion-row>
+              <form col-12>
+
+                  <ion-row>
+                      <ion-col col-12 col-sm-6>
+                          <ion-item><ion-label stacked>Nombre:</ion-label><ion-input type="text"></ion-input></ion-item>
+                      </ion-col>
+
+                      <ion-col col-12 col-sm-6>
+                          <ion-item><ion-label stacked>Apellido:</ion-label><ion-input type="text"></ion-input></ion-item>
+                      </ion-col>
+
+                      <ion-col col-12>
+                          <ion-item><ion-label stacked>E-Mail:</ion-label><ion-input type="email"></ion-input></ion-item>
+                      </ion-col>
+                  </ion-row>
+
+                  <ion-row>
+                      <ion-col col-12 col-sm-6>
+                          <ion-item><ion-label stacked>Contraseña:</ion-label><ion-input type="password"></ion-input></ion-item>
+                      </ion-col>
+
+                      <ion-col col-12 col-sm-6>
+                          <ion-item><ion-label stacked>Repetir contraseña:</ion-label><ion-input type="password"></ion-input></ion-item>
+                      </ion-col>
+                  </ion-row>
+
+                  <ion-row>
+                      <ion-col col-12 col-sm-6>
+                          <ion-item>
+                              <ion-label>Rol</ion-label>
+                              <ion-select value="0" okText="Aceptar" cancelText="Cancelar">
+                                  <ion-select-option value="0"></ion-select-option>
+                                  <ion-select-option value="1"></ion-select-option>
+                              </ion-select>
+                          </ion-item>
+                      </ion-col>
+                  </ion-row>
+
+              </form>
+          </ion-row>
+      </ion-grid>
+  </ion-content>
+
+  <ion-footer>
+    <ion-toolbar>
+      <button ion-button (click)="guardar()">Guardar</button>
+      <button ion-button (click)="cancelar()">Cancelar</button>
+    </ion-toolbar>
+  </ion-footer>
 </div>

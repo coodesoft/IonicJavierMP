@@ -37,12 +37,10 @@ import { UserInfoComponent }      from '../components/user-info/user-info';
 import { ModalUserFormComponent } from '../components/modal-user-form/modal-user-form';
 
 import { BrowserAnimationsModule}                         from '@angular/platform-browser/animations';
-import { MatSelectModule }                                from '@angular/material/select';
 import { MatNativeDateModule,MatInputModule, MatFormFieldModule } from '@angular/material';
 import { MatDatepickerModule}                             from '@angular/material/datepicker';
 import { MomentDateAdapter}                               from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
-import { MatAutocompleteModule }                          from '@angular/material/autocomplete';
 import { MatTableModule }                                 from '@angular/material/table';
 
 import * as _moment from 'moment';
@@ -81,7 +79,7 @@ export const YYYY_MM_DD_Format = {
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     BrowserAnimationsModule,
-    MatNativeDateModule,MatInputModule, MatFormFieldModule, MatSelectModule, MatDatepickerModule, MatAutocompleteModule, MatTableModule
+    MatNativeDateModule,MatInputModule, MatFormFieldModule, MatDatepickerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

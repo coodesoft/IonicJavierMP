@@ -1,22 +1,35 @@
 import { Component } from '@angular/core';
+import { ViewController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the ModalUserFormComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
+import { User } from '../../models/user';
+
 @Component({
   selector: 'modal-user-form',
   templateUrl: 'modal-user-form.html'
 })
 export class ModalUserFormComponent {
 
-  text: string;
+  private user_model:User  = new User();
+  private operacion:string = 'NUser';
+  private text:string      = 'Nuevo';
 
-  constructor() {
-    console.log('Hello ModalUserFormComponent Component');
-    this.text = 'Hello World';
+  constructor(
+    private viewCtrl:  ViewController,
+    private navParams: NavParams,
+  ) {
+    this.user_model = this.navParams.get('user_model');
+    this.operacion  = this.navParams.get('operacion');
+
+    if (this.operacion == 'NUser') { this.text = 'Nuevo'; }
+    if (this.operacion == 'EUser') { this.text = 'Editar'; }
+  }
+
+  guardar(){
+    this.viewCtrl.dismiss();
+  }
+
+  cancelar(){
+    this.viewCtrl.dismiss();
   }
 
 }
