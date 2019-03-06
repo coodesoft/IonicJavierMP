@@ -6,6 +6,11 @@
   "urlNewUser":"http://34.216.72.1/PHPAuth/API/user/create",
   "urlEditUser":"http://34.216.72.1/PHPAuth/API/user/edit",
   "urlDeleteUser":"http://34.216.72.1/PHPAuth/API/user/delete",
+  "urlGetAllUser":"http://34.216.72.1/PHPAuth/API/user/get-all",
+
+  "urlGetAllRols":"http://34.216.72.1/PHPAuth/API/rol/get-all",
+
+  "urlGetAllOrganizations":"http://34.216.72.1/PHPAuth/API/organization/get-all",
 
   "urlNewPago":"http://34.216.72.1/PHPAuth/API/pago/nuevo",
   "urlProcessPago":"http://34.216.72.1/PHPAuth/API/pago/procesar",

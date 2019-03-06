@@ -11,46 +11,58 @@
               <form col-12>
 
                   <ion-row>
+                    <ion-col col-12> <ion-item-divider color="primary">Información general: </ion-item-divider> </ion-col>
+                  </ion-row>
+
+                  <ion-row>
                       <ion-col col-12 col-sm-6>
-                          <ion-item><ion-label stacked>Nombre:</ion-label><ion-input type="text"></ion-input></ion-item>
+                          <ion-item><ion-label stacked>Nombre:</ion-label><ion-input type="text" [ngModelOptions]="{standalone:true}" [(ngModel)]="user_model.Nombre"></ion-input></ion-item>
                       </ion-col>
 
                       <ion-col col-12 col-sm-6>
-                          <ion-item><ion-label stacked>Apellido:</ion-label><ion-input type="text"></ion-input></ion-item>
+                          <ion-item><ion-label stacked>Apellido:</ion-label><ion-input type="text" [ngModelOptions]="{standalone:true}" [(ngModel)]="user_model.Apellido"></ion-input></ion-item>
                       </ion-col>
 
                       <ion-col col-12>
-                          <ion-item><ion-label stacked>E-Mail:</ion-label><ion-input type="email"></ion-input></ion-item>
+                          <ion-item><ion-label stacked>E-Mail:</ion-label><ion-input type="email" [ngModelOptions]="{standalone:true}" [(ngModel)]="user_model.Email"></ion-input></ion-item>
                       </ion-col>
                   </ion-row>
 
                   <ion-row>
                       <ion-col col-12 col-sm-6>
-                          <ion-item><ion-label stacked>Contraseña:</ion-label><ion-input type="password"></ion-input></ion-item>
+                          <ion-item><ion-label stacked>Contraseña:</ion-label><ion-input type="password" [ngModelOptions]="{standalone:true}" [(ngModel)]="user_model.Pass"></ion-input></ion-item>
                       </ion-col>
 
                       <ion-col col-12 col-sm-6>
-                          <ion-item><ion-label stacked>Repetir contraseña:</ion-label><ion-input type="password"></ion-input></ion-item>
+                          <ion-item><ion-label stacked>Repetir contraseña:</ion-label><ion-input type="password" [ngModelOptions]="{standalone:true}" [(ngModel)]="user_model.RPass"></ion-input></ion-item>
                       </ion-col>
+                  </ion-row>
+
+                  <ion-row>
+                    <ion-col col-12> <ion-item-divider color="primary">Roles asignados: </ion-item-divider> </ion-col>
+                  </ion-row>
+
+                  <ion-row>
+                    <ion-col col-12 col-sm-6>
+                      <ion-list>
+                        <ion-item *ngFor="let r of user_model.Roles">
+                          <ion-label>{{r.Name}}</ion-label>
+                          <ion-checkbox color="primary" slot="end" [ngModelOptions]="{standalone:true}" [(ngModel)]="r.v"></ion-checkbox>
+                        </ion-item>
+                      </ion-list>
+                    </ion-col>
+                  </ion-row>
+
+                  <ion-row>
+                    <ion-col col-12> <ion-item-divider color="primary">Organización de pertenencia: </ion-item-divider> </ion-col>
                   </ion-row>
 
                   <ion-row>
                       <ion-col col-12 col-sm-6>
                           <ion-item>
-                              <ion-label>Rol</ion-label>
+                              <ion-label>Organización</ion-label>
                               <ion-select value="0" okText="Aceptar" cancelText="Cancelar">
                                   <ion-option value="0"></ion-option>
-                                  <ion-option value="1"></ion-option>
-                              </ion-select>
-                          </ion-item>
-                      </ion-col>
-
-                      <ion-col col-12 col-sm-6>
-                          <ion-item>
-                              <ion-label>Empresa</ion-label>
-                              <ion-select value="0" okText="Aceptar" cancelText="Cancelar">
-                                  <ion-option value="0"></ion-option>
-                                  <ion-option value="1"></ion-option>
                               </ion-select>
                           </ion-item>
                       </ion-col>

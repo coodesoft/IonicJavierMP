@@ -46,10 +46,15 @@ import { MomentDateAdapter}                               from '@angular/materia
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatTableModule }                                 from '@angular/material/table';
 
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
 import * as _moment from 'moment';
 import {default as _rollupMoment} from 'moment';
-import { PagoProvider } from '../providers/pago/pago';
-import { UserProvider } from '../providers/user/user';
+
+import { PagoProvider }         from '../providers/pago/pago';
+import { UserProvider }         from '../providers/user/user';
+import { RolProvider }          from '../providers/rol/rol';
+import { OrganizationProvider } from '../providers/organization/organization';
 
 const moment = _rollupMoment || _moment;
 
@@ -83,7 +88,8 @@ export const YYYY_MM_DD_Format = {
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     BrowserAnimationsModule,
-    MatNativeDateModule,MatInputModule, MatFormFieldModule, MatDatepickerModule
+    MatNativeDateModule,MatInputModule, MatFormFieldModule, MatDatepickerModule,
+    NgxDatatableModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -106,7 +112,9 @@ export const YYYY_MM_DD_Format = {
     AuthProvider,  ConfigProvider,
     GeneralService, B64toPDFService, FormateoService,
     PagoProvider,
-    UserProvider
+    UserProvider,
+    RolProvider,
+    OrganizationProvider
   ]
 })
 export class AppModule {}

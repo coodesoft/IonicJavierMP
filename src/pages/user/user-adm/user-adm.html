@@ -15,6 +15,18 @@
         </ion-row>
         <!-- listado usuarios -->
         <ion-row>
+
+          <ion-list col-12 col-sm-8 col-md-8 col-lg-9 col-xl-4>
+
+          </ion-list>
+
         </ion-row>
     </ion-grid>
+
+    <ngx-datatable  class="material" [rows]="users_list" [columnMode]="'force'" [sortType]="'multi'" [reorderable]="false">
+        <ngx-datatable-column prop="id"        name="Id"></ngx-datatable-column>
+        <ngx-datatable-column prop="FirstName" name="Nombre"></ngx-datatable-column>
+        <ngx-datatable-column prop="LastName"  name="Apellido"></ngx-datatable-column>
+        <ngx-datatable-column prop="email"     name="Email"></ngx-datatable-column>
+    </ngx-datatable>
 </ion-content>

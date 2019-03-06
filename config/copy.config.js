@@ -22,5 +22,11 @@ module.exports = {
   copyMaterialThemeCSS: {
     src: ['{{ROOT}}/node_modules/@angular/material/prebuilt-themes/indigo-pink.css'],
     dest: '{{WWW}}/assets'
+  },
+  copyNgxFont: {
+    src: ['{{ROOT}}/node_modules/@swimlane/ngx-datatable/release/assets/fonts/data-table.ttf',
+    '{{ROOT}}/node_modules/@swimlane/ngx-datatable/release/assets/fonts/data-table.woff',
+    '{{ROOT}}/node_modules/@swimlane/ngx-datatable/release/themes/material.css'],
+    dest: '{{BUILD}}/fonts'
   }
 }

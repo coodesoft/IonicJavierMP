@@ -35,6 +35,19 @@ export class UserProvider {
     );
   }
 
+  public getAllOK = new Subject();
+  public getAllKO = new Subject();
+
+  getAll(){
+    this.http.post(this.configP.getConfigData().urlGetAllUser, '', { headers: new HttpHeaders({ 'Authorization': this.auth.userData.token }) }).subscribe(
+      data => { this.getAllOK.next(data); }, err  => { this.getAllKO.next(err);  }
+    );
+  }
+
+  private preSend(model){
+
+  }
+
   constructor(private configP: ConfigProvider, private auth:AuthProvider, private http:HttpClient) {}
 
 }
