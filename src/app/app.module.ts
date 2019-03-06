@@ -19,6 +19,8 @@ import { FormularioPagoPage } from '../pages/mercado-pago/formulario-pago/formul
 import { ResultPagoPage }     from '../pages/mercado-pago/result-pago/result-pago';
 import { UserAdmPage }        from '../pages/user/user-adm/user-adm';
 
+import { EmpresaAdmPage } from '../pages/empresa/empresa-adm/empresa-adm';
+
 import { StatusBar }    from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -33,8 +35,9 @@ import { B64toPDFService } from '../services/64to-pdf.service';
 import { GeneralService }  from '../services/general.service';
 
 //Importación de componentes
-import { UserInfoComponent }      from '../components/user-info/user-info';
-import { ModalUserFormComponent } from '../components/modal-user-form/modal-user-form';
+import { UserInfoComponent         } from '../components/user-info/user-info';
+import { ModalUserFormComponent    } from '../components/modal-user-form/modal-user-form';
+import { ModalEmpresaFormComponent } from '../components/modal-empresa-form/modal-empresa-form';
 
 import { BrowserAnimationsModule}                         from '@angular/platform-browser/animations';
 import { MatNativeDateModule,MatInputModule, MatFormFieldModule } from '@angular/material';
@@ -68,6 +71,7 @@ export const YYYY_MM_DD_Format = {
     HomePage,
     NuevoPagoPage, FormularioPagoPage, ResultPagoPage,
     ModalUserFormComponent, UserAdmPage,
+    EmpresaAdmPage, ModalEmpresaFormComponent,
     LoginPage, ResetPassPage, UserInfoComponent, PerfilesUsuariosPage,
     ActualizacionPerfilPage,
     ErrorPage,
@@ -87,6 +91,7 @@ export const YYYY_MM_DD_Format = {
     HomePage,
     NuevoPagoPage, FormularioPagoPage, ResultPagoPage,
     ModalUserFormComponent, UserAdmPage,
+    EmpresaAdmPage, ModalEmpresaFormComponent,
     LoginPage, UserInfoComponent, ResetPassPage, PerfilesUsuariosPage,
     ActualizacionPerfilPage,
     ErrorPage,

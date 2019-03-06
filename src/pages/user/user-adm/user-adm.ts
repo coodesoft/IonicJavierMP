@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 
 import { ModalUserFormComponent } from '../../../components/modal-user-form/modal-user-form';
-
 import { User } from '../../../models/user';
 
 @IonicPage()

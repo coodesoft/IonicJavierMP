@@ -1,0 +1,34 @@
+<div class="cont">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>{{text}} organización</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content padding>
+      <ion-grid>
+          <ion-row>
+              <form col-12>
+
+                  <ion-row>
+                      <ion-col col-12 col-sm-6>
+                          <ion-item><ion-label stacked>Code:</ion-label><ion-input type="text"></ion-input></ion-item>
+                      </ion-col>
+
+                      <ion-col col-12 col-sm-6>
+                          <ion-item><ion-label stacked>Nombre:</ion-label><ion-input type="text"></ion-input></ion-item>
+                      </ion-col>
+                  </ion-row>
+
+              </form>
+          </ion-row>
+      </ion-grid>
+  </ion-content>
+
+  <ion-footer>
+    <ion-toolbar>
+      <button ion-button (click)="guardar()">Guardar</button>
+      <button ion-button (click)="cancelar()">Cancelar</button>
+    </ion-toolbar>
+  </ion-footer>
+</div>

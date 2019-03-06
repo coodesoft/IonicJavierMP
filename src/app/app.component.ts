@@ -10,7 +10,8 @@ import { LoginPage }               from '../pages/login/login';
 import { ActualizacionPerfilPage } from '../pages/actualizacion-perfil/actualizacion-perfil';
 
 import { NuevoPagoPage }  from '../pages/mercado-pago/nuevo-pago/nuevo-pago';
-import { UserAdmPage }   from '../pages/user/user-adm/user-adm';
+import { UserAdmPage }    from '../pages/user/user-adm/user-adm';
+import { EmpresaAdmPage } from '../pages/empresa/empresa-adm/empresa-adm';
 
 // Side Menu Component
 import { SideMenuContentComponent } from './../shared/side-menu-content/side-menu-content.component';
@@ -101,6 +102,14 @@ export class MyApp {
       temp = { displayName: 'Usuarios', subItems: [] };
 
       temp.subItems.push({	iconName: 'person',	displayName: 'Administrar',	component: UserAdmPage });
+
+      this.options.push(temp);
+    }
+
+    if(this.codeInFuntions('NOrga',functions) || this.codeInFuntions('DOrga',functions) || this.codeInFuntions('EOrga',functions)){
+      temp = { displayName: 'Organizaciones', subItems: [] };
+
+      temp.subItems.push({	iconName: 'briefcase',	displayName: 'Administrar',	component: EmpresaAdmPage });
 
       this.options.push(temp);
     }
