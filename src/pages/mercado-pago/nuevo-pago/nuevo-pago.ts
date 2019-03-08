@@ -40,7 +40,7 @@ export class NuevoPagoPage {
     this.newPagoOK = this.pagoProv.newPagoOK.subscribe({  next: (r:RespuestaAuthModule) => {
       this.gral.dismissLoading();
       if ( r.result.success ){
-        this.pago_model.id = r.result.id;
+        this.pago_model.id = r.result.id_pago;
         this.navCtrl.push(FormularioPagoPage, { pago_model:this.pago_model });
       }
     } });

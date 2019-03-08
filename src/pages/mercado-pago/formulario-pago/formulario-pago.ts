@@ -51,22 +51,26 @@ export class FormularioPagoPage {
 
   doPay(){
       this.form = document.querySelector('#pay');
+      let obj = this;
       Mercadopago.createToken(this.form, (status, response) => {
         this.gral.dismissLoading();
         if (status != 200 && status != 201) {
           this.gral.newMensaje('Revise el formulario.');
         }else{
-            this.pago_model.token = response.id;
+            obj.pago_model.token = response.id;
             Mercadopago.clearSession();
-            this.pagoProv.processPago(this.pago_model);
+            obj.gral.presentLoading();
+            obj.pagoProv.processPago(obj.pago_model);
         }
       });
   }
 
   ionViewDidEnter(){
-    this.processPagoOK = this.pagoProv.newPagoOK.subscribe({  next: (r:RespuestaAuthModule) => {
+    this.processPagoOK = this.pagoProv.processPagoOK.subscribe({  next: (r:RespuestaAuthModule) => {
       this.gral.dismissLoading();
-      if ( r.result.success ){ this.navCtrl.push(ResultPagoPage, { pago_result:r }); }
+      if ( r.result.success ){ this.navCtrl.push(ResultPagoPage, { pago_id:r.result.id_pago }); } else {
+          this.gral.newMensaje('Ocurrió un error al intentar procesar el pago.');
+      }
     } });
 
     this.processPagoKO = this.pagoProv.processPagoKO.subscribe({  next: (r:RespuestaAuthModule) => {

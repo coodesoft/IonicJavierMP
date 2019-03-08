@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { NuevoPagoPage } from '../nuevo-pago/nuevo-pago';
+
 @IonicPage()
 @Component({
   selector: 'page-result-pago',
@@ -8,10 +10,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ResultPagoPage {
 
+  public codigo:string = '';
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
+    this.codigo = this.navParams.get('pago_id');
+  }
+
+  nuevoPago(){
+    this.NavController.push(NuevoPagoPage);
   }
 
 }
