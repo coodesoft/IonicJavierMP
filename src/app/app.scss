@@ -5,8 +5,8 @@
 }
 
 .toolbar-background-md{
-  background: #777;
-  background-color: #777; /* #CB2434 */
+  background: #009688;
+  background-color: #009688; /* #CB2434 */
 }
 
 side-menu-content {
@@ -20,36 +20,46 @@ side-menu-content {
     // Single option
     // ------------------
     ion-item.item.item-block.option {
-        background-color: #fff;
-        color: #222;
+        background-color: #2f323e;
+        color: #fff;
 
         &.active-side-menu-option {
             color: $active-color;
-            font-weight: 700;
+            font-weight: 0;
         }
     }
 
     // Header
     // ------------------
     ion-item.item.item-block.header {
-        background-color: #eee;
-        color: #222;
+        background-color: #2f323e;
+        color: #fff;
 
         &.active-side-menu-option {
-            color: $active-color;
-            font-weight: 700;
+          /*  background-color: $active-color;
+            font-weight: 700;*/
         }
     }
 
     // Sub option
     // ------------------
     ion-item.item.item-block.sub-option {
-        background-color: #fff;
-        color: #222;
+        background-color: #2f323e;
+        color: #fff;
+
+        padding-left: 30px !important;
 
         &.active-side-menu-option {
-            color: $active-color;
-            font-weight: 700;
+            background-color: $active-color;
+            font-weight: 0;
         }
     }
+
+    ion-icon{   min-height: 1.8rem !important; font-size: 1.8rem !important;  }
+
+}
+
+ion-menu{
+  .scroll-content{ background:#2f323e !important; }
+  ion-item { border-bottom:none !important; }
 }
