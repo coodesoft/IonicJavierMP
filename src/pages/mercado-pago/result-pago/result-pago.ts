@@ -20,7 +20,7 @@ export class ResultPagoPage {
   }
 
   nuevoPago(){
-    this.NavController.push(NuevoPagoPage);
+    this.navCtrl.push(NuevoPagoPage);
   }
 
 }
