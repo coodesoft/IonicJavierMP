@@ -13,7 +13,8 @@
         <form offset-sm-2 offset-md-3 offset-lg-3 offset-xl-4 col-12 col-sm-8 col-md-6 col-lg-6 col-xl-4>
             <ion-col col-xs-12 col-sm-3><ion-item>
                 <ion-label stacked>Monto:</ion-label>
-                <ion-input type="number" [(ngModel)]="pago_model.monto" [ngModelOptions]="{standalone:true}"></ion-input>
+                <ion-input type="text" (keyup)="pago_model.monto = format.getMoney(pago_model.monto)"
+                (click)="pago_model.monto = ''" (ionBlur)="pago_model.monto = moneyReset(pago_model.monto)" [(ngModel)]="pago_model.monto" [ngModelOptions]="{standalone:true}"></ion-input>
             </ion-item></ion-col>
 
             <ion-col col-xs-12 col-sm-3><ion-item>

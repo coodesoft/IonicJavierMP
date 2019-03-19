@@ -6,6 +6,7 @@ import { RespuestaAuthModule } from '../../../models/respuesta.authmodule';
 import { FormularioPagoPage } from '../formulario-pago/formulario-pago';
 import { PagoProvider }       from '../../../providers/pago/pago';
 import { GeneralService }     from '../../../services/general.service';
+import { FormateoService }    from '../../../services/formateo.service';
 
 @IonicPage()
 @Component({
@@ -23,7 +24,8 @@ export class NuevoPagoPage {
     private navCtrl:   NavController,
     private navParams: NavParams,
     private pagoProv:  PagoProvider,
-    private gral:      GeneralService
+    private gral:      GeneralService,
+    private format:    FormateoService
   ) { }
 
   newPago(){
@@ -34,6 +36,10 @@ export class NuevoPagoPage {
     } else {
       this.gral.newMensaje(this.pago_model.errors);
     }
+  }
+
+  moneyReset(v){
+      if(v==''){ return '$ 0';} else { return v; }
   }
 
   ionViewDidEnter(){

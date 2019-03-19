@@ -1,5 +1,5 @@
 export class Pago{
-  public monto:number       = 0;
+  public monto:string       = "$ 0";
   public descripcion:string = '';
   public email:string       = '';
 
@@ -9,8 +9,10 @@ export class Pago{
   public paymentMethodId:string = '';
   public errors                 = '';
 
+  private GROUP_SEPARATOR  = '.';
+
   public isValid(){
-      if ( this.monto <= 0        ){ this.errors = 'El monto ingresado debe ser mayor a cero'; return false; }
+      if ( Number(this.unFormat(this.monto)) <= 0 ){ this.errors = 'El monto ingresado debe ser mayor a cero'; return false; }
       if ( this.descripcion == '' ){ this.errors = 'Es necesario completar la descripción'; return false;    }
       if ( this.email == ''       ){ this.errors = 'Es necesario ingresar un E-Mail'; return false;    }
       return true;
@@ -18,5 +20,19 @@ export class Pago{
 
   public deleteExtraField(){
     delete this.errors;
+    delete this.GROUP_SEPARATOR;
+  }
+
+  private unFormat(val) { //[modificar] esto tiene que estar en un solo lugar!
+      if (!val) {
+          return '';
+      }
+      val = val.replace(/^0+/, '');
+
+      let s:string='';
+      if (this.GROUP_SEPARATOR === ',') {
+        s=val.replace(/[^0-9\.]/g, '');
+      } else { s=val.replace(/[^0-9,]/g, '');}
+      return s;
   }
 }
