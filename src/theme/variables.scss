@@ -52,11 +52,11 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #009688, /* anterior #CB2434 */
-  secondary:  #32db64,
+  primary:    #070707, /* anterior #CB2434 */
+  secondary:  #fc8207,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #2f323e
+  dark:       #070707
 );
 
 .bg-light{
@@ -98,9 +98,14 @@ $colors: (
 
 @import "ionic.theme.default";
 
-.scroll-content{
-    background: #f0f3f4;
+ion-content{
+    background-color: #0a2733 !important;
+}
 
+ion-icon{ color:#fc8207; }
+
+.scroll-content{
+    background:url(../assets/img/gestarcoop_fondo_gris_op_5.svg)no-repeat!important;background-size: 85%!important;background-position: right!important;
 }
 
 // Ionicons

@@ -2,7 +2,7 @@
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
-    <ion-title>Mi perfil - Gestar COOP</ion-title>
+    <ion-title>Mi perfil - Actualizar contraseña - Gestar COOP</ion-title>
     <user-info></user-info>
   </ion-navbar>
 </ion-header>
@@ -11,10 +11,8 @@
 <ion-content padding>
   <ion-grid>
     <ion-row>
-      <ion-col col-12 col-sm-4 col-md-4 col-lg-3 col-xl-2 offset-xl-3>
-        <ion-list>
-          <ion-item-divider color="primary">Actualizar contraseña</ion-item-divider>
-        </ion-list>
+      <ion-col offset-sm-2 offset-md-3 offset-lg-3 offset-xl-4 col-12 col-sm-8 col-md-6 col-lg-6 col-xl-4>
+
       <form [formGroup]="newPassForm" (ngSubmit)="newPass()">
       <ion-list>
         <ion-item>
@@ -31,7 +29,7 @@
         </ion-item>
       </ion-list>
       <div padding>
-        <button ion-button block type="submit">Guardar</button>
+        <button ion-button block type="submit" color="secondary">Guardar</button>
       </div>
     </form>
   </ion-col>
