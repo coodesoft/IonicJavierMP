@@ -11,9 +11,13 @@
   "urlGetAllRols":"http://34.216.72.1/PHPAuth/API/rol/get-all",
 
   "urlGetAllOrganizations":"http://34.216.72.1/PHPAuth/API/organization/get-all",
+  "urlNewOrganization":"http://34.216.72.1/PHPAuth/API/organization/create",
+  "urlEditOrganization":"http://34.216.72.1/PHPAuth/API/organization/edit",
+  "urlDeleteOrganization":"http://34.216.72.1/PHPAuth/API/organization/delete",
 
   "urlNewPago":"http://34.216.72.1/PHPAuth/API/pago/nuevo",
   "urlProcessPago":"http://34.216.72.1/PHPAuth/API/pago/procesar",
 
-  "MP_public_key":"TEST-fba76d81-be88-4449-b5b6-0c9aec79e38d"
+  "MP_public_key":"TEST-fba76d81-be88-4449-b5b6-0c9aec79e38d",
+  "MP_mail_defecto":"test.coode@gmail.com"
 }

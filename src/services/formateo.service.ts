@@ -6,8 +6,8 @@ export class FormateoService {
 
   constructor() { }
 
-  private DECIMAL_SEPARATOR:string = ",";
-  private GROUP_SEPARATOR:string   = ".";
+  private DECIMAL_SEPARATOR:string = ".";
+  private GROUP_SEPARATOR:string   = ",";
   private CUIL_SEPARATOR:string    = '-';
 
   private ISODate:string  = '';

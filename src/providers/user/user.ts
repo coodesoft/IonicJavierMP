@@ -8,6 +8,8 @@ import { AuthProvider }        from '../auth/auth';
 @Injectable()
 export class UserProvider {
 
+  public goSave   = new Subject();
+
   public createOK = new Subject();
   public createKO = new Subject();
 
@@ -29,18 +31,20 @@ export class UserProvider {
   public removeOK = new Subject();
   public removeKO = new Subject();
 
-  remove(model){
-    this.http.post(this.configP.getConfigData().urlDeleteUser, model, { headers: new HttpHeaders({ 'Authorization': this.auth.userData.token }) }).subscribe(
+  remove(id){
+    this.http.post(this.configP.getConfigData().urlDeleteUser, id, { headers: new HttpHeaders({ 'Authorization': this.auth.userData.token }) }).subscribe(
       data => { this.removeOK.next(data); }, err  => { this.removeKO.next(err);  }
     );
   }
 
   public getAllOK = new Subject();
   public getAllKO = new Subject();
+  private all_users:any = false;
 
   getAll(){
+    //if(this.all_users){ return this.all_users; }
     this.http.post(this.configP.getConfigData().urlGetAllUser, '', { headers: new HttpHeaders({ 'Authorization': this.auth.userData.token }) }).subscribe(
-      data => { this.getAllOK.next(data); }, err  => { this.getAllKO.next(err);  }
+      data => { this.all_users = data; this.getAllOK.next(data); }, err  => { this.getAllKO.next(err);  }
     );
   }
 

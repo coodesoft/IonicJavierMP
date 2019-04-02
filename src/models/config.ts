@@ -11,11 +11,15 @@ export class Config {
   public urlGetAllRols:string = '';
 
   public urlGetAllOrganizations:string = '';
+  public urlNewOrganization:string     = '';
+  public urlEditOrganization:string    = '';
+  public urlDeleteOrganization:string  = '';
 
   public urlNewPago:string     = '';
   public urlProcessPago:string = '';
 
-  public MP_public_key:string  = '';
+  public MP_public_key:string   = '';
+  public MP_mail_defecto:string = '';
 
   public loaded:boolean = false;
 }

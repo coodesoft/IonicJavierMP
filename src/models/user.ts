@@ -14,7 +14,8 @@ export class User{
   public Pass:string  = '';
   public RPass:string = '';
 
-  public errors:string = '';
+  private errors:string = '';
+  public getErrors(){ return this.errors; }
 
   public setRoleList(rl:any = []){
     this.Roles = [];

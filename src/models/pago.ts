@@ -8,6 +8,8 @@ export class Pago{
 
   public paymentMethodId:string = '';
   public errors                 = '';
+  public getErrors(){ return this.errors; }
+
 
   private GROUP_SEPARATOR  = '.';
 
