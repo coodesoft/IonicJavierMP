@@ -4,16 +4,20 @@
   "urlAuthUpdatePass":"http://34.216.72.1/PHPAuth/API/session/update-pass",
 
   "urlNewUser":"http://34.216.72.1/PHPAuth/API/user/create",
+  "urlGetOneUser":"http://34.216.72.1/PHPAuth/API/user/get-one",
   "urlEditUser":"http://34.216.72.1/PHPAuth/API/user/edit",
   "urlDeleteUser":"http://34.216.72.1/PHPAuth/API/user/delete",
   "urlGetAllUser":"http://34.216.72.1/PHPAuth/API/user/get-all",
+  "urlEnableUser":"http://34.216.72.1/PHPAuth/API/user/enable",
 
   "urlGetAllRols":"http://34.216.72.1/PHPAuth/API/rol/get-all",
 
   "urlGetAllOrganizations":"http://34.216.72.1/PHPAuth/API/organization/get-all",
+  "urlGetOneOrganization":"http://34.216.72.1/PHPAuth/API/organization/get-one",
   "urlNewOrganization":"http://34.216.72.1/PHPAuth/API/organization/create",
   "urlEditOrganization":"http://34.216.72.1/PHPAuth/API/organization/edit",
   "urlDeleteOrganization":"http://34.216.72.1/PHPAuth/API/organization/delete",
+  "urlEnableOrganization":"http://34.216.72.1/PHPAuth/API/organization/enable",
 
   "urlNewPago":"http://34.216.72.1/PHPAuth/API/pago/nuevo",
   "urlProcessPago":"http://34.216.72.1/PHPAuth/API/pago/procesar",

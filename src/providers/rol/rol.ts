@@ -19,14 +19,16 @@ export class RolProvider {
   public getAllKO = new Subject();
 
   public getAll(){
+    if (this.roles_listed) { this.getAllOK.next(this.roles_listed); return true; }
     this.http.post(this.configP.getConfigData().urlGetAllRols, '', { headers: new HttpHeaders({ 'Authorization': this.auth.userData.token }) }).subscribe(
         data => {
-          this.roles_listed = (<RespuestaAuthModule> data).result.roles;
-          this.getAllOK.next(<RespuestaAuthModule> data); },
-
+          this.roles_listed = (<RespuestaAuthModule> data).result.roles;  this.getAllOK.next(this.roles_listed); },
         err => { this.getAllKO.next(err); }
       );
   }
 
-  public roles_listed:any = {};
+  public roles_listed:any = false;
+  clearCache(){
+    this.roles_listed = false;
+  }
 }

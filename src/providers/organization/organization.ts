@@ -20,16 +20,26 @@ export class OrganizationProvider {
   public getAllOK = new Subject();
   public getAllKO = new Subject();
 
-  private all_organizations:any = false;
+  public all_organizations:any = false;
 
-  public getAll(){
-    //if (this.all_organizations){ return this.all_organizations; }
+  public getAll(noCache:boolean = false){
+    if (this.all_organizations && !noCache){ this.getAllOK.next(this.all_organizations); return true; }
     this.http.post(this.configP.getConfigData().urlGetAllOrganizations,'', { headers: new HttpHeaders({ 'Authorization': this.auth.userData.token }) }).subscribe(
         data => {
-          this.all_organizations = (<RespuestaAuthModule> data).result.roles;
-          this.getAllOK.next(<RespuestaAuthModule> data); },
+          this.all_organizations = (<RespuestaAuthModule> data).result.organizations; this.getAllOK.next(this.all_organizations); },
 
         err => { this.getAllKO.next(err); }
+      );
+  }
+
+  public getOneOK = new Subject();
+  public getOneKO = new Subject();
+
+  public getOne(id){
+    //if (this.all_organizations){ return this.all_organizations; }
+    this.http.post(this.configP.getConfigData().urlGetOneOrganization,{'id':id}, { headers: new HttpHeaders({ 'Authorization': this.auth.userData.token }) }).subscribe(
+        data => { this.getOneOK.next(<RespuestaAuthModule> data); },
+        err  => { this.getOneKO.next(err); }
       );
   }
 
@@ -55,9 +65,22 @@ export class OrganizationProvider {
   public removeKO = new Subject();
 
   remove(id){
-    this.http.post(this.configP.getConfigData().urlDeleteOrganization, id, { headers: new HttpHeaders({ 'Authorization': this.auth.userData.token }) }).subscribe(
+    this.http.post(this.configP.getConfigData().urlDeleteOrganization, {'id':id}, { headers: new HttpHeaders({ 'Authorization': this.auth.userData.token }) }).subscribe(
       data => { this.removeOK.next(data); }, err  => { this.removeKO.next(err);  }
     );
+  }
+
+  public enableOK = new Subject();
+  public enableKO = new Subject();
+
+  enable(id){
+    this.http.post(this.configP.getConfigData().urlEnableOrganization, {'id':id}, { headers: new HttpHeaders({ 'Authorization': this.auth.userData.token }) }).subscribe(
+      data => { this.enableOK.next(data); }, err  => { this.enableKO.next(err);  }
+    );
+  }
+
+  clearCache(){
+    this.all_organizations = false;
   }
 
 }

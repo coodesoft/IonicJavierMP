@@ -30,8 +30,14 @@ export class EmpresaAdmPage {
   private editKO;
   private removeOK;
   private removeKO;
+  private enableOK;
+  private enableKO;
+
   private getAllOK;
   private getAllKO;
+  private getOneOK;
+  private getOneKO;
+
   private goSave;
 
   private operation;
@@ -50,18 +56,20 @@ export class EmpresaAdmPage {
     this.modalOrga.present();
   }
 
-  edit(id){
+  edit(row){
     this.operation = 'EOrga';
-    this.modalOrga = this.modalCtrl.create(ModalEmpresaFormComponent, { 'organiza_model':this.organiza_model, 'operacion':this.operation });
-    this.modalOrga.present();
+    this.gral.presentLoading();
+    this.organization.getOne(row.id);
   }
 
-  remove(id){ this.organization.remove(id); }
+  remove(row){ this.organization.remove(row.id); }
+
+  enable(row){ this.organization.enable(row.id); }
 
   ionViewDidEnter() {
     this.getAllOK = this.organization.getAllOK.subscribe({  next: (r:RespuestaAuthModule) => {
       this.gral.dismissLoading();
-      this.orgas_list = r.result.orgas;
+      this.orgas_list = r;
     } });
     this.getAllKO = this.organization.getAllKO.subscribe({  next: (r:RespuestaAuthModule) => { this.gral.errMsg(r); this.gral.dismissLoading();  } });
 
@@ -73,31 +81,45 @@ export class EmpresaAdmPage {
     }});
 
     this.createOK = this.organization.createOK.subscribe({  next: (r:RespuestaAuthModule) => {
-      this.gral.dismissLoading();
+      this.organization.getAll(true);
     } });
     this.createKO = this.organization.createKO.subscribe({  next: (r:RespuestaAuthModule) => { this.gral.errMsg(r); this.gral.dismissLoading();  } });
 
     this.editOK = this.organization.editOK.subscribe({  next: (r:RespuestaAuthModule) => {
-      this.gral.dismissLoading();
+      this.organization.getAll(true);
     } });
     this.editKO = this.organization.editKO.subscribe({  next: (r:RespuestaAuthModule) => { this.gral.errMsg(r); this.gral.dismissLoading();  } });
 
-    this.removeOK = this.organization.removeOK.subscribe({  next: (r:RespuestaAuthModule) => {
-      this.gral.dismissLoading();
-    } });
+    this.removeOK = this.organization.removeOK.subscribe({  next: (r:RespuestaAuthModule) => { this.organization.getAll(true); } });
     this.removeKO = this.organization.removeKO.subscribe({  next: (r:RespuestaAuthModule) => { this.gral.errMsg(r); this.gral.dismissLoading();  } });
 
+    this.enableOK = this.organization.enableOK.subscribe({  next: (r:RespuestaAuthModule) => { this.organization.getAll(true); } });
+    this.enableKO = this.organization.enableKO.subscribe({  next: (r:RespuestaAuthModule) => { this.gral.errMsg(r); this.gral.dismissLoading();  } });
+
+    this.getOneOK = this.organization.getOneOK.subscribe({  next: (r:RespuestaAuthModule) => {
+      this.gral.dismissLoading();
+      this.organiza_model.setParams(r.result.organization);
+      this.modalOrga = this.modalCtrl.create(ModalEmpresaFormComponent, { 'organiza_model':this.organiza_model, 'operacion':this.operation });
+      this.modalOrga.present();
+    } });
+    this.getOneKO = this.organization.getOneKO.subscribe({  next: (r:RespuestaAuthModule) => { this.gral.errMsg(r); this.gral.dismissLoading();  } });
+
     this.gral.presentLoading();
-    this.organization.getAll();
+    this.organization.getAll(true);
   }
 
-  ionViewDidLeave(){
+  ionViewWillLeave(){
     this.createOK.unsubscribe();
     this.createKO.unsubscribe();
     this.editOK.unsubscribe();
     this.editKO.unsubscribe();
     this.removeOK.unsubscribe();
     this.removeKO.unsubscribe();
+    this.enableOK.unsubscribe();
+    this.enableKO.unsubscribe();
+
+    this.getOneOK.unsubscribe();
+    this.getOneKO.unsubscribe();
     this.getAllOK.unsubscribe();
     this.getAllKO.unsubscribe();
 

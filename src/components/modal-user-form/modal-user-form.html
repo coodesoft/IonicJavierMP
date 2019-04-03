@@ -16,15 +16,15 @@
 
                   <ion-row>
                       <ion-col col-12 col-sm-6>
-                          <ion-item><ion-label stacked>Nombre:</ion-label><ion-input type="text" [ngModelOptions]="{standalone:true}" [(ngModel)]="user_model.Nombre"></ion-input></ion-item>
+                          <ion-item><ion-label stacked>Nombre:</ion-label><ion-input type="text" [ngModelOptions]="{standalone:true}" [(ngModel)]="user_model.personal_info.FirstName"></ion-input></ion-item>
                       </ion-col>
 
                       <ion-col col-12 col-sm-6>
-                          <ion-item><ion-label stacked>Apellido:</ion-label><ion-input type="text" [ngModelOptions]="{standalone:true}" [(ngModel)]="user_model.Apellido"></ion-input></ion-item>
+                          <ion-item><ion-label stacked>Apellido:</ion-label><ion-input type="text" [ngModelOptions]="{standalone:true}" [(ngModel)]="user_model.personal_info.LastName"></ion-input></ion-item>
                       </ion-col>
 
                       <ion-col col-12>
-                          <ion-item><ion-label stacked>E-Mail:</ion-label><ion-input type="email" [ngModelOptions]="{standalone:true}" [(ngModel)]="user_model.Email"></ion-input></ion-item>
+                          <ion-item><ion-label stacked>E-Mail:</ion-label><ion-input type="email" [ngModelOptions]="{standalone:true}" [(ngModel)]="user_model.personal_info.email"></ion-input></ion-item>
                       </ion-col>
                   </ion-row>
 
@@ -45,7 +45,7 @@
                   <ion-row>
                     <ion-col col-12 col-sm-6>
                       <ion-list>
-                        <ion-item *ngFor="let r of user_model.Roles">
+                        <ion-item *ngFor="let r of user_model.Rol_list">
                           <ion-label>{{r.Name}}</ion-label>
                           <ion-checkbox color="primary" slot="end" [ngModelOptions]="{standalone:true}" [(ngModel)]="r.v"></ion-checkbox>
                         </ion-item>
@@ -61,8 +61,8 @@
                       <ion-col col-12 col-sm-6>
                           <ion-item>
                               <ion-label>Organización</ion-label>
-                              <ion-select value="0" okText="Aceptar" cancelText="Cancelar">
-                                  <ion-option value="0"></ion-option>
+                              <ion-select value="0" okText="Aceptar" cancelText="Cancelar"  [ngModelOptions]="{standalone:true}" [(ngModel)]="user_model.organization">
+                                  <ion-option *ngFor="let t of organization.all_organizations" [value]="t.id">{{t.Name}}</ion-option>
                               </ion-select>
                           </ion-item>
                       </ion-col>

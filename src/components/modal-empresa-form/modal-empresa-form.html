@@ -12,11 +12,11 @@
 
                   <ion-row>
                       <ion-col col-12 col-sm-6>
-                          <ion-item><ion-label stacked>Code:</ion-label><ion-input type="text"></ion-input></ion-item>
+                          <ion-item><ion-label stacked>Code:</ion-label><ion-input type="text" [ngModelOptions]="{standalone:true}" [(ngModel)]="organiza_model.Code"></ion-input></ion-item>
                       </ion-col>
 
                       <ion-col col-12 col-sm-6>
-                          <ion-item><ion-label stacked>Nombre:</ion-label><ion-input type="text"></ion-input></ion-item>
+                          <ion-item><ion-label stacked>Nombre:</ion-label><ion-input [ngModelOptions]="{standalone:true}" [(ngModel)]="organiza_model.Name"></ion-input></ion-item>
                       </ion-col>
                   </ion-row>
 

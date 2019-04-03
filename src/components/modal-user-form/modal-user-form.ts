@@ -27,8 +27,7 @@ export class ModalUserFormComponent {
   ) {
     this.user_model = this.navParams.get('user_model');
     this.operacion  = this.navParams.get('operacion');
-    this.user_model.setRoleList( this.rolProv.roles_listed );
-
+    
     if (this.operacion == 'NUser') { this.text = 'Nuevo'; }
     if (this.operacion == 'EUser') { this.text = 'Editar'; }
   }

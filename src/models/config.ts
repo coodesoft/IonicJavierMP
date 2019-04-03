@@ -7,13 +7,17 @@ export class Config {
   public urlEditUser:string   = '';
   public urlDeleteUser:string = '';
   public urlGetAllUser:string = '';
+  public urlGetOneUser:string = '';
+  public urlEnableUser:string = '';
 
   public urlGetAllRols:string = '';
 
   public urlGetAllOrganizations:string = '';
+  public urlGetOneOrganization:string  = '';
   public urlNewOrganization:string     = '';
   public urlEditOrganization:string    = '';
   public urlDeleteOrganization:string  = '';
+  public urlEnableOrganization:string  = '';
 
   public urlNewPago:string     = '';
   public urlProcessPago:string = '';

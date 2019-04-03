@@ -15,10 +15,11 @@
         </ion-row>
         <!-- listado usuarios -->
         <ion-row>
-          <ngx-datatable col-12  class="material" [rows]="orgas_list" [columnMode]="'force'" [sortType]="'multi'" [reorderable]="false">
+          <ngx-datatable col-12  class="material"  [rowHeight]="50" [rows]="orgas_list" [columnMode]="'force'" [sortType]="'multi'" [reorderable]="false">
               <ngx-datatable-column prop="id"   name="Id"></ngx-datatable-column>
               <ngx-datatable-column prop="Code" name="Código"></ngx-datatable-column>
               <ngx-datatable-column prop="Name" name="Nombre"></ngx-datatable-column>
+              <ngx-datatable-column prop="disabled_on" name="Deshabilitada el:"></ngx-datatable-column>
 
               <ngx-datatable-column name="id" [resizeable]="false">
                  <ng-template ngx-datatable-header-template>
@@ -26,7 +27,8 @@
                  </ng-template>
                  <ng-template let-row="row" ngx-datatable-cell-template>
                    <button ion-button small color="secondary" (click)="edit(row)">Editar</button>
-                   <button ion-button small color="danger" (click)="remove(row)">Deshabilitar</button>
+                   <button ion-button small *ngIf="row.disabled_on == NULL" color="danger" (click)="remove(row)">Deshabilitar</button>
+                   <button ion-button small *ngIf="row.disabled_on != NULL" color="success" (click)="enable(row)">Habilitar</button>
                  </ng-template>
                </ngx-datatable-column>
           </ngx-datatable>
