@@ -9,6 +9,7 @@ export class User{
   public personal_info = {'FirstName':'', 'LastName':'', 'email':''};
   public id:string     = '';
   public organization  = '';
+  public operation     = '';
 
   public Pass:string  = '';
   public RPass:string = '';
@@ -46,6 +47,15 @@ export class User{
   }
 
   isValid(){
+    if (this.personal_info.FirstName == '') { this.errors = 'Es necesario completar el campo "Nombre"';   return false; }
+    if (this.personal_info.LastName == '')  { this.errors = 'Es necesario completar el campo "Apellido"'; return false; }
+    if (this.personal_info.email == '')     { this.errors = 'Es necesario completar el campo "Email"';    return false; }
+console.log(this.operation);
+    if ( (this.Pass != this.RPass) && (this.RPass != '' || this.Pass != '') ) { this.errors = 'Las contraseñas ingresadas no coinciden';    return false; }
+    if ( this.operation == 'NUser' && this.Pass == '') { this.errors = 'Es necesario especificar una contraseña';    return false; }
+
+    if (this.organization == '') { this.errors = 'Es necesario especificar una organización de pertenencia';    return false; }
+
     return true;
   }
 }

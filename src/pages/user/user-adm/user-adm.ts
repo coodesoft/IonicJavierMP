@@ -83,6 +83,7 @@ export class UserAdmPage {
     /// ROLES
     this.getAllRolesOK = this.rolProv.getAllOK.subscribe({  next: (r:RespuestaAuthModule) => {
       this.gral.dismissLoading();
+      this.user_model.operation = this.operation;
       this.user_model.setRoleList( this.rolProv.roles_listed );
       if (this.operation == 'EUser'){
         this.gral.presentLoading();
@@ -104,10 +105,15 @@ export class UserAdmPage {
 
     //USUADIOS adm
     this.goSave = this.userProv.goSave.subscribe({  next: (r:User) => {
-      this.user_model = r;
-      if (this.operation == 'NUser'){ this.userProv.create(this.user_model); }
-      else                          { this.userProv.edit(this.user_model); }
-      this.gral.presentLoading();
+      this.user_model           = r;
+      this.user_model.operation = this.operation;
+      if (this.user_model.isValid()){
+        if (this.operation == 'NUser'){ this.userProv.create(this.user_model); }
+        else                          { this.userProv.edit(this.user_model); }
+        this.gral.presentLoading();
+      } else {
+        this.gral.newMensaje(this.user_model.getErrors());
+      }
     } });
 
     this.createOK = this.userProv.createOK.subscribe({  next: (r:RespuestaAuthModule) => {

@@ -75,9 +75,13 @@ export class EmpresaAdmPage {
 
     this.goSave = this.organization.goSave.subscribe({  next: (r:Organization) => {
       this.orga_model = r;
-      if (this.operation == 'NOrga'){ this.organization.create(this.orga_model); }
-      else { this.organization.edit(this.orga_model); }
-      this.gral.presentLoading();
+      if (this.orga_model.isValid()){
+        if (this.operation == 'NOrga'){ this.organization.create(this.orga_model); }
+        else { this.organization.edit(this.orga_model); }
+        this.gral.presentLoading();
+      } else {
+        this.gral.newMensaje(this.orga_model.getErrors());
+      }
     }});
 
     this.createOK = this.organization.createOK.subscribe({  next: (r:RespuestaAuthModule) => {

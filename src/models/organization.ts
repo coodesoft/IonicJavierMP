@@ -17,6 +17,8 @@ export class Organization{
   public getErrors(){ return this.errors; }
 
   isValid(){
+    if (this.Code == '') { this.errors = 'Es necesario completar el campo "Código"'; return false; }
+    if (this.Name == '') { this.errors = 'Es necesario completar el campo "Nombre"'; return false; }
     return true;
   }
 }
