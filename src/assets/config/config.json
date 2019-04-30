@@ -22,6 +22,5 @@
   "urlNewPago":"https://cajeros.gestarcoop.com/PHPAuth/API/pago/nuevo",
   "urlProcessPago":"https://cajeros.gestarcoop.com/PHPAuth/API/pago/procesar",
 
-  "MP_public_key":"TEST-fba76d81-be88-4449-b5b6-0c9aec79e38d",
-  "MP_mail_defecto":"test.coode@gmail.com"
+  "MP_public_key":"TEST-fba76d81-be88-4449-b5b6-0c9aec79e38d"
 }

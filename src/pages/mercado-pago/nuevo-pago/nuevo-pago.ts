@@ -6,7 +6,7 @@ import { RespuestaAuthModule } from '../../../models/respuesta.authmodule';
 import { FormularioPagoPage } from '../formulario-pago/formulario-pago';
 import { PagoProvider }       from '../../../providers/pago/pago';
 import { GeneralService }     from '../../../services/general.service';
-import { ConfigProvider }     from '../../../providers/config/config';
+import { AuthProvider }       from '../../../providers/auth/auth';
 import { FormateoService }    from '../../../services/formateo.service';
 
 @IonicPage()
@@ -27,7 +27,7 @@ export class NuevoPagoPage {
     private pagoProv:  PagoProvider,
     private gral:      GeneralService,
     private format:    FormateoService,
-    private config:    ConfigProvider
+    private auth:    AuthProvider
   ) { }
 
   newPago(){
@@ -45,7 +45,7 @@ export class NuevoPagoPage {
   }
 
   ionViewDidEnter(){
-    this.pago_model.email = this.config.getConfigData().MP_mail_defecto;
+    this.pago_model.email = this.auth.userData.organization[0].email;
 
     this.newPagoOK = this.pagoProv.newPagoOK.subscribe({  next: (r:RespuestaAuthModule) => {
       this.gral.dismissLoading();

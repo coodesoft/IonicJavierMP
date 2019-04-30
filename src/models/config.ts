@@ -23,7 +23,6 @@ export class Config {
   public urlProcessPago:string = '';
 
   public MP_public_key:string   = '';
-  public MP_mail_defecto:string = '';
 
   public loaded:boolean = false;
 }
