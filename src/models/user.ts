@@ -24,6 +24,8 @@ export class User{
     if (r.personal_info.hasOwnProperty('FirstName')){ this.personal_info.FirstName = r.personal_info.FirstName; }
     if (r.personal_info.hasOwnProperty('LastName')) { this.personal_info.LastName  = r.personal_info.LastName; }
     if (r.personal_info.hasOwnProperty('email'))    { this.personal_info.email     = r.personal_info.email; }
+
+    if (r.organization.hasOwnProperty('OrganizationId')) { this.organization  = r.organization.OrganizationId; }
   }
 
   public clearParams(){
