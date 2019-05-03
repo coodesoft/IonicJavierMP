@@ -20,7 +20,7 @@ export class ResultPagoPage {
   }
 
   nuevoPago(){
-    this.navCtrl.push(NuevoPagoPage);
+    this.navCtrl.setRoot(NuevoPagoPage);
   }
 
 }
