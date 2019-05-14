@@ -1,26 +1,27 @@
-{
-  "urlAuthLogin":"https://cajeros.gestarcoop.com/PHPAuth/API/session/login",
-  "urlAuthReset":"https://cajeros.gestarcoop.com/PHPAuth/API/session/new-reset-pass-token",
-  "urlAuthUpdatePass":"https://cajeros.gestarcoop.com/PHPAuth/API/session/update-pass",
+﻿ {
+  "urlAuthLogin":"https://cajeros.gestarcoop.com/tehuelche/cajeros/PHPAuth/API/session/login",
+  "urlAuthReset":"https://cajeros.gestarcoop.com/tehuelche/cajeros/PHPAuth/API/session/new-reset-pass-token",
+  "urlAuthUpdatePass":"https://cajeros.gestarcoop.com/tehuelche/cajeros/PHPAuth/API/session/update-pass",
 
-  "urlNewUser":"https://cajeros.gestarcoop.com/PHPAuth/API/user/create",
-  "urlGetOneUser":"https://cajeros.gestarcoop.com/PHPAuth/API/user/get-one",
-  "urlEditUser":"https://cajeros.gestarcoop.com/PHPAuth/API/user/edit",
-  "urlDeleteUser":"https://cajeros.gestarcoop.com/PHPAuth/API/user/delete",
-  "urlGetAllUser":"https://cajeros.gestarcoop.com/PHPAuth/API/user/get-all",
-  "urlEnableUser":"https://cajeros.gestarcoop.com/PHPAuth/API/user/enable",
+  "urlNewUser":"https://cajeros.gestarcoop.com/tehuelche/cajeros/PHPAuth/API/user/create",
+  "urlGetOneUser":"https://cajeros.gestarcoop.com/tehuelche/cajeros/PHPAuth/API/user/get-one",
+  "urlEditUser":"https://cajeros.gestarcoop.com/tehuelche/cajeros/PHPAuth/API/user/edit",
+  "urlDeleteUser":"https://cajeros.gestarcoop.com/tehuelche/cajeros/PHPAuth/API/user/delete",
+  "urlGetAllUser":"https://cajeros.gestarcoop.com/tehuelche/cajeros/PHPAuth/API/user/get-all",
+  "urlEnableUser":"https://cajeros.gestarcoop.com/tehuelche/cajeros/PHPAuth/API/user/enable",
 
-  "urlGetAllRols":"https://cajeros.gestarcoop.com/PHPAuth/API/rol/get-all",
+  "urlGetAllRols":"https://cajeros.gestarcoop.com/tehuelche/cajeros/PHPAuth/API/rol/get-all",
 
-  "urlGetAllOrganizations":"https://cajeros.gestarcoop.com/PHPAuth/API/organization/get-all",
-  "urlGetOneOrganization":"https://cajeros.gestarcoop.com/PHPAuth/API/organization/get-one",
-  "urlNewOrganization":"https://cajeros.gestarcoop.com/PHPAuth/API/organization/create",
-  "urlEditOrganization":"https://cajeros.gestarcoop.com/PHPAuth/API/organization/edit",
-  "urlDeleteOrganization":"https://cajeros.gestarcoop.com/PHPAuth/API/organization/delete",
-  "urlEnableOrganization":"https://cajeros.gestarcoop.com/PHPAuth/API/organization/enable",
+  "urlGetAllOrganizations":"https://cajeros.gestarcoop.com/tehuelche/cajeros/PHPAuth/API/organization/get-all",
+  "urlGetOneOrganization":"https://cajeros.gestarcoop.com/tehuelche/cajeros/PHPAuth/API/organization/get-one",
+  "urlNewOrganization":"https://cajeros.gestarcoop.com/tehuelche/cajeros/PHPAuth/API/organization/create",
+  "urlEditOrganization":"https://cajeros.gestarcoop.com/tehuelche/cajeros/PHPAuth/API/organization/edit",
+  "urlDeleteOrganization":"https://cajeros.gestarcoop.com/tehuelche/cajeros/PHPAuth/API/organization/delete",
+  "urlEnableOrganization":"https://cajeros.gestarcoop.com/tehuelche/cajeros/PHPAuth/API/organization/enable",
 
-  "urlNewPago":"https://cajeros.gestarcoop.com/PHPAuth/API/pago/nuevo",
-  "urlProcessPago":"https://cajeros.gestarcoop.com/PHPAuth/API/pago/procesar",
+  "urlNewPago":"https://cajeros.gestarcoop.com/tehuelche/cajeros/PHPAuth/API/pago/nuevo",
+  "urlProcessPago":"https://cajeros.gestarcoop.com/tehuelche/cajeros/PHPAuth/API/pago/procesar",
 
-  "MP_public_key":"TEST-fba76d81-be88-4449-b5b6-0c9aec79e38d"
+  "MP_public_key":"TEST-d514efcc-b32e-4ad7-84aa-fed8ab192cd8",
+  "MP_mail_defecto":"test.coode@gmail.com"
 }
